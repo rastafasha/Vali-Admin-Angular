@@ -1,0 +1,59 @@
+<!-- Begin Header -->
+<header class="header">
+    <nav class="navbar fixed-top">
+        <!-- Begin Topbar -->
+        <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
+            <!-- Begin Logo -->
+            <div class="navbar-header">
+                <a routerLink="/home" class="navbar-brand ">
+                    <div class="brand-image brand-big">
+                        <img src="assets/img/logo-big.png" alt="logo" class="logo-big">
+                    </div>
+                    <div class="brand-image brand-small">
+                        <img src="assets/img/logo.png" alt="logo" class="logo-small">
+                    </div>
+                </a>
+                <!-- Toggle Button -->
+                <a id="toggle-btn" class="menu-btn navbar-collapse">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <!-- End Toggle -->
+            </div>
+            <!-- End Logo -->
+            <!-- Begin Navbar Menu -->
+            <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right">
+
+
+                <!-- User -->
+                <div *ngFor="let user of users">
+                    <li class="nav-item dropdown">
+                        <a id="user" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
+                            <img src="{{user.image}}" alt="..." class="avatar rounded-circle">
+                        </a>
+                        <ul aria-labelledby="user" class="user-size dropdown-menu">
+                            <li class="welcome">
+                                <a href="#" class="edit-profil"><i class="la la-gear"></i></a>
+                                <img src="{{user.image}}" alt="..." class="rounded-circle">
+                                <h4>{{user.username}}</h4>
+                            </li>
+                            <li>
+                                <a href="https://valispa.com/" target="_blank" class="dropdown-item"> site</a>
+                                <a routerLink="/users" class="dropdown-item"> users</a>
+                            </li>
+                            <!----li>
+                                <a href="users" class="dropdown-item"> Users</a>
+                            </li-->
+                            <li><a rel="nofollow" routerLink="/login" class="dropdown-item logout text-center"><i class="ti-power-off"></i></a></li>
+                        </ul>
+                    </li>
+                </div>
+                <!-- End User -->
+            </ul>
+            <!-- End Navbar Menu -->
+        </div>
+        <!-- End Topbar -->
+    </nav>
+</header>
+<!-- End Header -->

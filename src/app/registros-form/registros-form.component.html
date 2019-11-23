@@ -1,0 +1,63 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="content-inner">
+    <div class="container-fluid">
+
+        <!-- Begin Page Header-->
+        <div class="row">
+            <div class="page-header">
+                <div class="d-flex align-items-center">
+                    <h2 class="page-header-title">{{pageTitle}}</h2>
+                    <div>
+                        <div class="page-header-tools">
+                            <a class="btn btn-gradient-01" href="javascript:void(0)" (click)="goBack()">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Header -->
+        <div class="row flex-row">
+            <div class="col-12">
+                <!-- Form -->
+                <div class="widget has-shadow">
+                    <div class="subcriptore-form widget-body">
+                        <form [formGroup]="subcriptoreForm" (ngSubmit)="onSubmit()">
+
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Email <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" formControlName="email" class="form-control" placeholder="email" required>
+                                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                                        <div *ngIf="email.errors">
+                                            Email is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Is Active</label>
+                                <div class="col-md-9">
+                                    <input type="radio" formControlName="is_active" value="1" /> Yes
+                                    <input type="radio" formControlName="is_active" value="0" /> No
+                                </div>
+                            </div>
+
+                            <div class="form-group form-row">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <input type="hidden" formControlName="id">
+                                    <button type="submit" [disabled]="!subcriptoreForm.valid" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {{error}}
+                </div>
+                <!-- End Form -->
+            </div>
+        </div>
+        <!-- End Row -->
+    </div>
+    <!-- End Container -->
+    <app-footer></app-footer>

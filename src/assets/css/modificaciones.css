@@ -1,0 +1,14 @@
+table,
+.table-responsive {
+    width: 100%;
+    text-align: left;
+    table-layout: fixed;
+}
+
+th,
+td {
+    word-wrap: break-word;
+    width: 100%;
+}
+
+@media screen and (max-width: 750px) {}

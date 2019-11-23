@@ -1,0 +1,65 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="content-inner">
+    <div class="container-fluid">
+
+        <!-- Begin Page Header-->
+        <div class="row">
+            <div class="page-header">
+                <div class="d-flex align-items-center">
+                    <h2 class="page-header-title">{{title}}</h2>
+                    <div>
+                        <div class="page-header-tools">
+                            <a class="btn btn-gradient-01" href="javascript:void(0)" (click)="goBack()">Back</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="page-header-tools">
+                            <a class="btn btn-gradient-01" [routerLink]="['/calming/create/']">Add Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Header -->
+        <div class="row flex-row">
+            <div class="col-12">
+                <!-- Form -->
+                <div class="widget has-shadow">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <th>#ID</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Title Esp</th>
+                            <th>Price</th>
+                            <th>Modal</th>
+                            <th>Created At</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr *ngFor="let calming of calmings">
+                            <td>{{calming.id}}</td>
+                            <td><img src="{{calming.image}}" style="width: 100px"></td>
+                            <td>{{calming.title}}</td>
+                            <td>{{calming.titleesp}}</td>
+                            <td>{{calming.price}}</td>
+                            <td>{{calming.popup}}</td>
+                            <td>{{calming.created_at | date: 'mediumDate'}}</td>
+
+
+                            <td class="td-actions">
+                                <a [routerLink]="['/calming/edit', calming.id]"><i class="la la-edit edit"></i></a>
+                                <a (click)="onDelete(calming.id)"><i class="la la-close delete"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                    {{error}}
+
+                </div>
+                <!-- End Form -->
+            </div>
+        </div>
+        <!-- End Row -->
+    </div>
+    <!-- End Container -->
+    <app-footer></app-footer>
