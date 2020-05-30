@@ -50,6 +50,9 @@ export class WaxFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -70,6 +73,9 @@ export class WaxFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
 
@@ -89,6 +95,9 @@ export class WaxFormComponent implements OnInit {
   get price() { return this.waxForm.get('price'); }
   get popup() { return this.waxForm.get('popup'); }
   get button() { return this.waxForm.get('button'); }
+  get textFinanc() { return this.waxForm.get('textFinanc'); }
+  get textFinancEsp() { return this.waxForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.waxForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -102,6 +111,9 @@ export class WaxFormComponent implements OnInit {
     formData.append('is_featured', this.waxForm.get('is_featured').value);
     formData.append('is_active', this.waxForm.get('is_active').value);
     formData.append('image', this.waxForm.get('image').value);
+    formData.append('textFinanc', this.waxForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.waxForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.waxForm.get('is_activeTf').value);
 
     const id = this.waxForm.get('id').value;
 

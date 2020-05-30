@@ -45,6 +45,9 @@ export class CalmingFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -65,6 +68,9 @@ export class CalmingFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
   }
@@ -83,6 +89,9 @@ export class CalmingFormComponent implements OnInit {
   get price() { return this.calmingForm.get('price'); }
   get popup() { return this.calmingForm.get('popup'); }
   get button() { return this.calmingForm.get('button'); }
+  get textFinanc() { return this.calmingForm.get('textFinanc'); }
+  get textFinancEsp() { return this.calmingForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.calmingForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -96,6 +105,9 @@ export class CalmingFormComponent implements OnInit {
     formData.append('is_featured', this.calmingForm.get('is_featured').value);
     formData.append('is_active', this.calmingForm.get('is_active').value);
     formData.append('image', this.calmingForm.get('image').value);
+    formData.append('textFinanc', this.calmingForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.calmingForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.calmingForm.get('is_activeTf').value);
 
     const id = this.calmingForm.get('id').value;
 

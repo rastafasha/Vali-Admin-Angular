@@ -13,6 +13,8 @@ export class ManageLuxuryComponent implements OnInit {
   title = 'Manage Luxury';
   luxurings: Luxuring;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private luxuringService: LuxuringService, private location: Location) { }
 

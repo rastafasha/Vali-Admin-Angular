@@ -15,33 +15,33 @@ export class LookService {
   constructor(private http: HttpClient) { }
 
   getLooks() {
-    return this.http.get<Look>(this.serverUrl + 'api/adminLooks').pipe(
+    return this.http.get<Look>(this.serverUrl + 'api_look/adminLooks').pipe(
       catchError(this.handleError)
     );
   }
 
   getLook(id: number) {
-    return this.http.get<Look>(this.serverUrl + 'api/adminLook/' + id).pipe(
+    return this.http.get<Look>(this.serverUrl + 'api_look/adminLook/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createLook(look) {
-    return this.http.post<any>(this.serverUrl + 'api/createLook/', look)
+    return this.http.post<any>(this.serverUrl + 'api_look/createLook/', look)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateLook(look, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateLook/' + id, look)
+    return this.http.post<any>(this.serverUrl + 'api_look/updateLook/' + id, look)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteLook(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteLook/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_look/deleteLook/' + id).pipe(
       catchError(this.handleError)
     );
   }

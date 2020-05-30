@@ -35,9 +35,10 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let look of looks">
+                        <tr *ngFor="let look of looks | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{look.id}}</td>
                             <td><img src="{{look.image}}" style="width: 100px"></td>
                             <td>{{look.title}}</td>
@@ -45,6 +46,7 @@
                             <td>{{look.price}}</td>
                             <td>{{look.popup}}</td>
                             <td>{{look.created_at | date: 'mediumDate'}}</td>
+                            <td>{{look.is_active}}</td>
 
                             <td class="td-actions">
                                 <a [routerLink]="['/look/edit', look.id]"><i class="la la-edit edit"></i></a>
@@ -52,6 +54,7 @@
                             </td>
                         </tr>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     {{error}}
 
                 </div>

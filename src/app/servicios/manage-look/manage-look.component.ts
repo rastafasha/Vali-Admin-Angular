@@ -13,6 +13,8 @@ export class ManageLookComponent implements OnInit {
   title = 'Manage Look';
   looks: Look;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private lookService: LookService, private location: Location) { }
 

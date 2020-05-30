@@ -35,9 +35,10 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let antiage of antiages">
+                        <tr *ngFor="let antiage of antiages | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{antiage.id}}</td>
                             <td><img src="{{antiage.image}}" style="width: 100px"></td>
                             <td>{{antiage.title}}</td>
@@ -45,13 +46,14 @@
                             <td>{{antiage.price}}</td>
                             <td>{{antiage.popup}}</td>
                             <td>{{antiage.created_at | date: 'mediumDate'}}</td>
-
+                            <td>{{antiage.is_active}}</td>
                             <td class="td-actions">
                                 <a [routerLink]="['/antiage/edit', antiage.id]"><i class="la la-edit edit"></i></a>
                                 <a (click)="onDelete(antiage.id)"><i class="la la-close delete"></i></a>
                             </td>
                         </tr>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     {{error}}
 
                 </div>

@@ -35,6 +35,7 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
                         <tr *ngFor="let wrapping of wrappings">
@@ -45,6 +46,7 @@
                             <td>{{wrapping.price}}</td>
                             <td>{{wrapping.popup}}</td>
                             <td>{{wrapping.created_at | date: 'mediumDate'}}</td>
+                            <td>{{wrapping.is_active}}</td>
 
                             <td class="td-actions">
                                 <a [routerLink]="['/wrapping/edit', wrapping.id]"><i class="la la-edit edit"></i></a>

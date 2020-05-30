@@ -15,33 +15,33 @@ export class HypertrophicService {
   constructor(private http: HttpClient) { }
 
   getHypertrophics() {
-    return this.http.get<Hypertrophic>(this.serverUrl + 'api/adminHypertrophics').pipe(
+    return this.http.get<Hypertrophic>(this.serverUrl + 'api_fibrohypertrophic/adminHypertrophics').pipe(
       catchError(this.handleError)
     );
   }
 
   getHypertrophic(id: number) {
-    return this.http.get<Hypertrophic>(this.serverUrl + 'api/adminHypertrophic/' + id).pipe(
+    return this.http.get<Hypertrophic>(this.serverUrl + 'api_fibrohypertrophic/adminHypertrophic/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createHypertrophic(hypertrophic) {
-    return this.http.post<any>(this.serverUrl + 'api/createHypertrophic/', hypertrophic)
+    return this.http.post<any>(this.serverUrl + 'api_fibrohypertrophic/createHypertrophic/', hypertrophic)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateHypertrophic(hypertrophic, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateHypertrophic/' + id, hypertrophic)
+    return this.http.post<any>(this.serverUrl + 'api_fibrohypertrophic/updateHypertrophic/' + id, hypertrophic)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteHypertrophic(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteHypertrophic/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_fibrohypertrophic/deleteHypertrophic/' + id).pipe(
       catchError(this.handleError)
     );
   }

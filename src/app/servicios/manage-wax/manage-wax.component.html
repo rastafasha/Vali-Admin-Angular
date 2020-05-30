@@ -35,9 +35,10 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let wax of waxs">
+                        <tr *ngFor="let wax of waxs | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{wax.id}}</td>
                             <td><img src="{{wax.image}}" style="width: 100px"></td>
                             <td>{{wax.title}}</td>
@@ -45,6 +46,7 @@
                             <td>{{wax.price}}</td>
                             <td>{{wax.popup}}</td>
                             <td>{{wax.created_at | date: 'mediumDate'}}</td>
+                            <td>{{wax.is_active}}</td>
 
                             <td class="td-actions">
                                 <a [routerLink]="['/wax/edit', wax.id]"><i class="la la-edit edit"></i></a>
@@ -52,6 +54,7 @@
                             </td>
                         </tr>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     {{error}}
 
                 </div>

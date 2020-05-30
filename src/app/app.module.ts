@@ -9,6 +9,11 @@ import { AuthModule } from './auth/auth.module';
 
 // Import Angular plugin.
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+// paginacion
+import { Ng2PaginationModule} from 'ng2-pagination';
+
+// Pipes
+import { PipesModule } from './pipes/pipes.module';
 
 import { AppComponent } from './app.component';
 
@@ -17,19 +22,19 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ManageGalleryComponent } from './manage-gallery/manage-gallery.component';
-import { GalleryFormComponent } from './gallery-form/gallery-form.component';
+import { ManageGalleryComponent } from './manage/manage-gallery/manage-gallery.component';
+import { GalleryFormComponent } from './forms/gallery-form/gallery-form.component';
 import { WaxFormComponent } from './servicios/wax-form/wax-form.component';
 import { ManageWaxComponent } from './servicios/manage-wax/manage-wax.component';
 import { ManagePermanentComponent } from './servicios/manage-permanent/manage-permanent.component';
 import { PermanentFormComponent } from './servicios/permanent-form/permanent-form.component';
 import { SpecialtFormComponent } from './servicios/specialt-form/specialt-form.component';
 import { ManageSpecialtComponent } from './servicios/manage-specialt/manage-specialt.component';
-import { ModalFormComponent } from './modal-form/modal-form.component';
-import { ManageModalComponent } from './manage-modal/manage-modal.component';
-import { ManageSpecialComponent } from './manage-special/manage-special.component';
-import { SpecialFormComponent } from './special-form/special-form.component';
-import { ManageContactComponent } from './manage-contact/manage-contact.component';
+import { ModalFormComponent } from './forms/modal-form/modal-form.component';
+import { ManageModalComponent } from './manage/manage-modal/manage-modal.component';
+import { ManageSpecialComponent } from './manage/manage-special/manage-special.component';
+import { SpecialFormComponent } from './forms/special-form/special-form.component';
+import { ManageContactComponent } from './manage/manage-contact/manage-contact.component';
 import { ManageAntiageComponent } from './servicios/manage-antiage/manage-antiage.component';
 import { AntiageFormComponent } from './servicios/antiage-form/antiage-form.component';
 import { ManageRestorativeComponent } from './servicios/manage-restorative/manage-restorative.component';
@@ -60,12 +65,18 @@ import { ManageBodyComponent } from './servicios/manage-body/manage-body.compone
 import { BodyFormComponent } from './servicios/body-form/body-form.component';
 import { HypertrophicFormComponent } from './servicios/hypertrophic-form/hypertrophic-form.component';
 import { ManageHypertrophicComponent } from './servicios/manage-hypertrophic/manage-hypertrophic.component';
-import { UsersFormComponent } from './users-form/users-form.component';
-import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { UsersFormComponent } from './forms/users-form/users-form.component';
+import { ManageUsersComponent } from './manage/manage-users/manage-users.component';
 import { ManageWaxinfoComponent } from './paginas/manage-waxinfo/manage-waxinfo.component';
 import { WaxinfoFormComponent } from './paginas/waxinfo-form/waxinfo-form.component';
-import { RegistrosFormComponent } from './registros-form/registros-form.component';
-import { ManageRegistrosComponent } from './manage-registros/manage-registros.component';
+import { RegistrosFormComponent } from './forms/registros-form/registros-form.component';
+import { ManageRegistrosComponent } from './manage/manage-registros/manage-registros.component';
+
+import { ShareThisComponent } from './share-this/share-this.component';
+
+import { ShareButtonsModule } from '@ngx-share/buttons';
+import { MembershipFormComponent } from './forms/membership-form/membership-form.component';
+import { ManageMembershipComponent } from './manage/manage-membership/manage-membership.component';
 
 @NgModule({
   declarations: [
@@ -122,7 +133,10 @@ import { ManageRegistrosComponent } from './manage-registros/manage-registros.co
     ManageWaxinfoComponent,
     WaxinfoFormComponent,
     RegistrosFormComponent,
-    ManageRegistrosComponent
+    ManageRegistrosComponent,
+    ShareThisComponent,
+    MembershipFormComponent,
+    ManageMembershipComponent
   ],
   imports: [
     BrowserModule,
@@ -131,8 +145,19 @@ import { ManageRegistrosComponent } from './manage-registros/manage-registros.co
     AuthModule,
     FormsModule,
     ReactiveFormsModule,
-    CKEditorModule
+    CKEditorModule,
+    Ng2PaginationModule,
+    PipesModule,
+    ShareButtonsModule.withConfig({
+      debug: true
+    })
   ],
+  exports:[
+    MenuComponent,
+    HeaderComponent,
+    FooterComponent
+  ],
+
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })

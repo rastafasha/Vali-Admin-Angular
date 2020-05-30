@@ -15,33 +15,33 @@ export class WrappingService {
   constructor(private http: HttpClient) { }
 
   getWrappings() {
-    return this.http.get<Wrapping>(this.serverUrl + 'api/adminWrappings').pipe(
+    return this.http.get<Wrapping>(this.serverUrl + 'api_wrapping/adminWrappings').pipe(
       catchError(this.handleError)
     );
   }
 
   getWrapping(id: number) {
-    return this.http.get<Wrapping>(this.serverUrl + 'api/adminWrapping/' + id).pipe(
+    return this.http.get<Wrapping>(this.serverUrl + 'api_wrapping/adminWrapping/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createWrapping(wrapping) {
-    return this.http.post<any>(this.serverUrl + 'api/createWrapping/', wrapping)
+    return this.http.post<any>(this.serverUrl + 'api_wrapping/createWrapping/', wrapping)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateWrapping(wrapping, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateWrapping/' + id, wrapping)
+    return this.http.post<any>(this.serverUrl + 'api_wrapping/updateWrapping/' + id, wrapping)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteWrapping(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteWrapping/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_wrapping/deleteWrapping/' + id).pipe(
       catchError(this.handleError)
     );
   }

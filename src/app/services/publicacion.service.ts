@@ -15,33 +15,33 @@ export class PublicacionService {
   constructor(private http: HttpClient) { }
 
   getPublicacions() {
-    return this.http.get<Publicacion>(this.serverUrl + 'api/adminPublicacions').pipe(
+    return this.http.get<Publicacion>(this.serverUrl + 'api_publicacion/adminPublicacions').pipe(
       catchError(this.handleError)
     );
   }
 
   getPublicacion(id: number) {
-    return this.http.get<Publicacion>(this.serverUrl + 'api/adminPublicacion/' + id).pipe(
+    return this.http.get<Publicacion>(this.serverUrl + 'api_publicacion/adminPublicacion/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createPublicacion(publicacion) {
-    return this.http.post<any>(this.serverUrl + 'api/createPublicacion/', publicacion)
+    return this.http.post<any>(this.serverUrl + 'api_publicacion/createPublicacion/', publicacion)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updatePublicacion(publicacion, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updatePublicacion/' + id, publicacion)
+    return this.http.post<any>(this.serverUrl + 'api_publicacion/updatePublicacion/' + id, publicacion)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deletePublicacion(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deletePublicacion/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_publicacion/deletePublicacion/' + id).pipe(
       catchError(this.handleError)
     );
   }

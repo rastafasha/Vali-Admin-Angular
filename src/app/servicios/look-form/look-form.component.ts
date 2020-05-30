@@ -45,6 +45,9 @@ export class LookFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -65,6 +68,9 @@ export class LookFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
   }
@@ -83,6 +89,9 @@ export class LookFormComponent implements OnInit {
   get price() { return this.lookForm.get('price'); }
   get popup() { return this.lookForm.get('popup'); }
   get button() { return this.lookForm.get('button'); }
+  get textFinanc() { return this.lookForm.get('textFinanc'); }
+  get textFinancEsp() { return this.lookForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.lookForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -96,6 +105,9 @@ export class LookFormComponent implements OnInit {
     formData.append('is_featured', this.lookForm.get('is_featured').value);
     formData.append('is_active', this.lookForm.get('is_active').value);
     formData.append('image', this.lookForm.get('image').value);
+    formData.append('textFinanc', this.lookForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.lookForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.lookForm.get('is_activeTf').value);
 
     const id = this.lookForm.get('id').value;
 

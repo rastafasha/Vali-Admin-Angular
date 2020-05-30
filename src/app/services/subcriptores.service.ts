@@ -15,33 +15,33 @@ export class SubcriptoreService {
   constructor(private http: HttpClient) { }
 
   getSubcriptores() {
-    return this.http.get<Subcriptore>(this.serverUrl + 'api/adminSubcriptores').pipe(
+    return this.http.get<Subcriptore>(this.serverUrl + 'api_contact/adminSubcriptores').pipe(
       catchError(this.handleError)
     );
   }
 
   getSubcriptore(id: number) {
-    return this.http.get<Subcriptore>(this.serverUrl + 'api/adminSubcriptore/' + id).pipe(
+    return this.http.get<Subcriptore>(this.serverUrl + 'api_contact/adminSubcriptore/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createSubcriptore(subcriptore) {
-    return this.http.post<any>(this.serverUrl + 'api/createSubcriptore/', subcriptore)
+    return this.http.post<any>(this.serverUrl + 'api_contact/createSubcriptore/', subcriptore)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateSubcriptore(subcriptore, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateSubcriptore/' + id, subcriptore)
+    return this.http.post<any>(this.serverUrl + 'api_contact/updateSubcriptore/' + id, subcriptore)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteSubcriptore(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteSubcriptore/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_contact/deleteSubcriptore/' + id).pipe(
       catchError(this.handleError)
     );
   }

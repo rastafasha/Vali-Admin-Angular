@@ -45,6 +45,9 @@ export class SculptingFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -65,6 +68,9 @@ export class SculptingFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
   }
@@ -83,6 +89,9 @@ export class SculptingFormComponent implements OnInit {
   get price() { return this.sculptingForm.get('price'); }
   get popup() { return this.sculptingForm.get('popup'); }
   get button() { return this.sculptingForm.get('button'); }
+  get textFinanc() { return this.sculptingForm.get('textFinanc'); }
+  get textFinancEsp() { return this.sculptingForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.sculptingForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -96,6 +105,9 @@ export class SculptingFormComponent implements OnInit {
     formData.append('is_featured', this.sculptingForm.get('is_featured').value);
     formData.append('is_active', this.sculptingForm.get('is_active').value);
     formData.append('image', this.sculptingForm.get('image').value);
+    formData.append('textFinanc', this.sculptingForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.sculptingForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.sculptingForm.get('is_activeTf').value);
 
     const id = this.sculptingForm.get('id').value;
 

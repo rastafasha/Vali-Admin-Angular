@@ -45,6 +45,9 @@ export class RestorativeFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -65,6 +68,9 @@ export class RestorativeFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
   }
@@ -83,6 +89,9 @@ export class RestorativeFormComponent implements OnInit {
   get price() { return this.restorativeForm.get('price'); }
   get popup() { return this.restorativeForm.get('popup'); }
   get button() { return this.restorativeForm.get('button'); }
+  get textFinanc() { return this.restorativeForm.get('textFinanc'); }
+  get textFinancEsp() { return this.restorativeForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.restorativeForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -96,6 +105,9 @@ export class RestorativeFormComponent implements OnInit {
     formData.append('is_featured', this.restorativeForm.get('is_featured').value);
     formData.append('is_active', this.restorativeForm.get('is_active').value);
     formData.append('image', this.restorativeForm.get('image').value);
+    formData.append('textFinanc', this.restorativeForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.restorativeForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.restorativeForm.get('is_activeTf').value);
 
     const id = this.restorativeForm.get('id').value;
 

@@ -15,33 +15,33 @@ export class CalmingService {
   constructor(private http: HttpClient) { }
 
   getCalmings() {
-    return this.http.get<Calming>(this.serverUrl + 'api/adminCalmings').pipe(
+    return this.http.get<Calming>(this.serverUrl + 'api_calming/adminCalmings').pipe(
       catchError(this.handleError)
     );
   }
 
   getCalming(id: number) {
-    return this.http.get<Calming>(this.serverUrl + 'api/adminCalming/' + id).pipe(
+    return this.http.get<Calming>(this.serverUrl + 'api_calming/adminCalming/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createCalming(calming) {
-    return this.http.post<any>(this.serverUrl + 'api/createCalming/', calming)
+    return this.http.post<any>(this.serverUrl + 'api_calming/createCalming/', calming)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateCalming(calming, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateCalming/' + id, calming)
+    return this.http.post<any>(this.serverUrl + 'api_calming/updateCalming/' + id, calming)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteCalming(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteCalming/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_calming/deleteCalming/' + id).pipe(
       catchError(this.handleError)
     );
   }

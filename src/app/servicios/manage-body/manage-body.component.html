@@ -35,9 +35,10 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let body of bodys">
+                        <tr *ngFor="let body of bodys | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{body.id}}</td>
                             <td><img src="{{body.image}}" style="width: 100px"></td>
                             <td>{{body.title}}</td>
@@ -45,6 +46,7 @@
                             <td>{{body.price}}</td>
                             <td>{{body.popup}}</td>
                             <td>{{body.created_at | date: 'mediumDate'}}</td>
+                            <td>{{body.is_active}}</td>
 
                             <td class="td-actions">
                                 <a [routerLink]="['/body/edit', body.id]"><i class="la la-edit edit"></i></a>
@@ -52,6 +54,7 @@
                             </td>
                         </tr>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     {{error}}
 
                 </div>

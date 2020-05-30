@@ -15,33 +15,33 @@ export class FibrofaceService {
   constructor(private http: HttpClient) { }
 
   getFibrofaces() {
-    return this.http.get<Fibroface>(this.serverUrl + 'api/adminFibrofaces').pipe(
+    return this.http.get<Fibroface>(this.serverUrl + 'api_fibroface/adminFibrofaces').pipe(
       catchError(this.handleError)
     );
   }
 
   getFibroface(id: number) {
-    return this.http.get<Fibroface>(this.serverUrl + 'api/adminFibroface/' + id).pipe(
+    return this.http.get<Fibroface>(this.serverUrl + 'api_fibroface/adminFibroface/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createFibroface(fibrofaceace) {
-    return this.http.post<any>(this.serverUrl + 'api/createFibroface/', fibrofaceace)
+    return this.http.post<any>(this.serverUrl + 'api_fibroface/createFibroface/', fibrofaceace)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateFibroface(fibrofaceace, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateFibroface/' + id, fibrofaceace)
+    return this.http.post<any>(this.serverUrl + 'api_fibroface/updateFibroface/' + id, fibrofaceace)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteFibroface(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteFibroface/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_fibroface/deleteFibroface/' + id).pipe(
       catchError(this.handleError)
     );
   }

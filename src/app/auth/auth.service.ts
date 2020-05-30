@@ -23,11 +23,16 @@ export class AuthService {
     .pipe(map(user => {
         if (user && user.token) {
           localStorage.setItem('currentUser', JSON.stringify(user));
+          
           this.isLoggedIn = true;
         }
       }),
       catchError(this.handleError)
     );
+  }
+
+  handleResponse(data){
+    sessionStorage.setItem('currentUser', data.username);
   }
 
   getAuthorizationToken() {

@@ -13,6 +13,8 @@ export class ManageBrighteningComponent implements OnInit {
   title = 'Manage Brightening';
   brightenings: Brightening;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private brighteningService: BrighteningService, private location: Location ) { }
 

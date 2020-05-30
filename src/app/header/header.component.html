@@ -30,17 +30,16 @@
                 <div *ngFor="let user of users">
                     <li class="nav-item dropdown">
                         <a id="user" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
-                            <img src="{{user.image}}" alt="..." class="avatar rounded-circle">
+                            <img src="{{user.image}}" alt="{{user.username}}" class="avatar rounded-circle">
                         </a>
                         <ul aria-labelledby="user" class="user-size dropdown-menu">
                             <li class="welcome">
-                                <a href="#" class="edit-profil"><i class="la la-gear"></i></a>
-                                <img src="{{user.image}}" alt="..." class="rounded-circle">
+                                <img src="{{user.image}}" alt="{{user.username}}" class="rounded-circle">
                                 <h4>{{user.username}}</h4>
                             </li>
                             <li>
                                 <a href="https://valispa.com/" target="_blank" class="dropdown-item"> site</a>
-                                <a routerLink="/users" class="dropdown-item"> users</a>
+                                <a href="https://valispa.com/es/" target="_blank" class="dropdown-item"> site esp</a>
                             </li>
                             <!----li>
                                 <a href="users" class="dropdown-item"> Users</a>

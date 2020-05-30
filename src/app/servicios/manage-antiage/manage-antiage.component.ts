@@ -13,6 +13,8 @@ export class ManageAntiageComponent implements OnInit {
   title = 'Manage Antiage';
   antiages: Antiage;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private antiageService: AntiageService, private location: Location) { }
 

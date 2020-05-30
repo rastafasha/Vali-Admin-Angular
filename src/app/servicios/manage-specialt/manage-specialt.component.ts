@@ -14,6 +14,8 @@ export class ManageSpecialtComponent implements OnInit {
   title = 'Manage Special treatments';
   specialts: Specialt;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private specialtService: SpecialtService, private location: Location) { }
 

@@ -15,33 +15,33 @@ export class RestorativeService {
   constructor(private http: HttpClient) { }
 
   getRestoratives() {
-    return this.http.get<Restorative>(this.serverUrl + 'api/adminRestoratives').pipe(
+    return this.http.get<Restorative>(this.serverUrl + 'api_restorative/adminRestoratives').pipe(
       catchError(this.handleError)
     );
   }
 
   getRestorative(id: number) {
-    return this.http.get<Restorative>(this.serverUrl + 'api/adminRestorative/' + id).pipe(
+    return this.http.get<Restorative>(this.serverUrl + 'api_restorative/adminRestorative/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createRestorative(restorative) {
-    return this.http.post<any>(this.serverUrl + 'api/createRestorative/', restorative)
+    return this.http.post<any>(this.serverUrl + 'api_restorative/createRestorative/', restorative)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateRestorative(restorative, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateRestorative/' + id, restorative)
+    return this.http.post<any>(this.serverUrl + 'api_restorative/updateRestorative/' + id, restorative)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteRestorative(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteRestorative/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_restorative/deleteRestorative/' + id).pipe(
       catchError(this.handleError)
     );
   }

@@ -45,6 +45,9 @@ export class BridalFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -65,6 +68,9 @@ export class BridalFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
   }
@@ -83,6 +89,9 @@ export class BridalFormComponent implements OnInit {
   get price() { return this.bridalForm.get('price'); }
   get popup() { return this.bridalForm.get('popup'); }
   get button() { return this.bridalForm.get('button'); }
+  get textFinanc() { return this.bridalForm.get('textFinanc'); }
+  get textFinancEsp() { return this.bridalForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.bridalForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -96,6 +105,9 @@ export class BridalFormComponent implements OnInit {
     formData.append('is_featured', this.bridalForm.get('is_featured').value);
     formData.append('is_active', this.bridalForm.get('is_active').value);
     formData.append('image', this.bridalForm.get('image').value);
+    formData.append('textFinanc', this.bridalForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.bridalForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.bridalForm.get('is_activeTf').value);
 
     const id = this.bridalForm.get('id').value;
 

@@ -8,14 +8,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 // gallery
 
-import { ManageGalleryComponent } from './manage-gallery/manage-gallery.component';
-import { GalleryFormComponent } from './gallery-form/gallery-form.component';
-import { ManageModalComponent } from './manage-modal/manage-modal.component';
-import { ModalFormComponent } from './modal-form/modal-form.component';
-import { ManageSpecialComponent } from './manage-special/manage-special.component';
-import { SpecialFormComponent } from './special-form/special-form.component';
+import { ManageGalleryComponent } from './manage/manage-gallery/manage-gallery.component';
+import { GalleryFormComponent } from './forms/gallery-form/gallery-form.component';
+import { ManageModalComponent } from './manage/manage-modal/manage-modal.component';
+import { ModalFormComponent } from './forms/modal-form/modal-form.component';
+import { ManageSpecialComponent } from './manage/manage-special/manage-special.component';
+import { SpecialFormComponent } from './forms/special-form/special-form.component';
 
-import { ManageContactComponent } from './manage-contact/manage-contact.component';
+import { ManageContactComponent } from './manage/manage-contact/manage-contact.component';
 
 import { ManageWaxComponent } from './servicios/manage-wax/manage-wax.component';
 import { WaxFormComponent } from './servicios/wax-form/wax-form.component';
@@ -65,14 +65,16 @@ import { ManageBodyComponent } from './servicios/manage-body/manage-body.compone
 import { BodyFormComponent } from './servicios/body-form/body-form.component';
 import { HypertrophicFormComponent } from './servicios/hypertrophic-form/hypertrophic-form.component';
 import { ManageHypertrophicComponent } from './servicios/manage-hypertrophic/manage-hypertrophic.component';
-import { UsersFormComponent } from './users-form/users-form.component';
-import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { UsersFormComponent } from './forms/users-form/users-form.component';
+import { ManageUsersComponent } from './manage/manage-users/manage-users.component';
 
 import { ManageWaxinfoComponent} from './paginas/manage-waxinfo/manage-waxinfo.component';
 import { WaxinfoFormComponent } from './paginas/waxinfo-form/waxinfo-form.component';
 
-import { ManageRegistrosComponent } from './manage-registros/manage-registros.component';
-import { RegistrosFormComponent} from './registros-form/registros-form.component'
+import { ManageRegistrosComponent } from './manage/manage-registros/manage-registros.component';
+import { RegistrosFormComponent} from './forms/registros-form/registros-form.component'
+import { MembershipFormComponent } from './forms/membership-form/membership-form.component';
+import { ManageMembershipComponent } from './manage/manage-membership/manage-membership.component';
 
 
 
@@ -153,9 +155,9 @@ const routes: Routes = [
   { path: 'modal',canActivate: [AuthGuard], component: ManageModalComponent },
   { path: 'modal/create',canActivate: [AuthGuard], component: ModalFormComponent },
   { path: 'modal/edit/:id',canActivate: [AuthGuard], component: ModalFormComponent },
-  { path: 'red',canActivate: [AuthGuard], component: ManageSpecialComponent },
-  { path: 'red/create',canActivate: [AuthGuard], component: SpecialFormComponent },
-  { path: 'red/edit/:id',canActivate: [AuthGuard], component: SpecialFormComponent },
+  { path: 'promos',canActivate: [AuthGuard], component: ManageSpecialComponent },
+  { path: 'promos/create',canActivate: [AuthGuard], component: SpecialFormComponent },
+  { path: 'promos/edit/:id',canActivate: [AuthGuard], component: SpecialFormComponent },
   // Contact
   { path: 'contact',canActivate: [AuthGuard], component: ManageContactComponent },
   { path: 'users',canActivate: [AuthGuard], component: ManageUsersComponent },
@@ -170,6 +172,9 @@ const routes: Routes = [
   { path: 'waxinfo',canActivate: [AuthGuard], component: ManageWaxinfoComponent },
   { path: 'waxinfo/create',canActivate: [AuthGuard], component: WaxinfoFormComponent },
   { path: 'waxinfo/edit/:id',canActivate: [AuthGuard], component: WaxinfoFormComponent },
+  
+  { path: 'pages',canActivate: [AuthGuard], component: ManageMembershipComponent },
+  { path: 'pages/edit/:id',canActivate: [AuthGuard], component: MembershipFormComponent },
 
   { path: '**', redirectTo: '/admin', pathMatch: 'full' }
 ];

@@ -24,13 +24,13 @@
                     <div class="specialt-form widget-body">
                         <form [formGroup]="specialtForm" (ngSubmit)="onSubmit()">
 
-                            <div class="form-group form-row">
+                            <!--div class="form-group form-row">
                                 <label class="col-md-3">Is Featured</label>
                                 <div class="col-md-9">
                                     <input type="radio" formControlName="is_featured" value="1" /> Yes
                                     <input type="radio" formControlName="is_featured" value="0" /> No
                                 </div>
-                            </div>
+                            </div-->
                             <div class="form-group form-row">
                                 <label class="col-md-3">Is Active</label>
                                 <div class="col-md-9">
@@ -43,12 +43,13 @@
                                 <li><a data-toggle="tab" href="#menu1">Español</a></li>
                             </ul>
 
+                            <!--English-->
                             <div class="tab-content">
                                 <div id="home" class="tab-pane active">
                                     <div class="form-group form-row">
                                         <label class="col-md-3">Title <span class="required">*</span></label>
                                         <div class="col-md-9">
-                                            <input type="text" formControlName="title" class="form-control" placeholder="Title" required>
+                                            <input type="text" formControlName="title" class="form-control" required>
                                             <div *ngIf="title.invalid && (title.dirty || title.touched)" class="error">
                                                 <div *ngIf="title.errors">
                                                     Title is required.
@@ -60,7 +61,7 @@
                                     <div class="form-group form-row">
                                         <label class="col-md-3">Description <span class="required">*</span></label>
                                         <div class="col-md-9">
-                                            <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" formControlName="description" rows="5" class="form-control" placeholder="Description" required></ckeditor>
+                                            <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" formControlName="description" rows="5" class="form-control" required></ckeditor>
 
                                             <div *ngIf="description.invalid && (description.dirty || description.touched)" class="error">
                                                 <div *ngIf="description.errors">
@@ -69,14 +70,26 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group form-row">
+                                        <label class="col-md-3">Text Financing <span class="required">*</span></label>
+                                        <div class="col-md-9">
+                                            <input type="text" formControlName="textFinanc" class="form-control" required>
+                                            <div *ngIf="textFinanc.invalid && (textFinanc.dirty || textFinanc.touched)" class="error">
+                                                <div *ngIf="textFinanc.errors">
+                                                    Financing is required.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
                                 </div>
+                                <!--Español-->
                                 <div id="menu1" class="tab-pane fade">
                                     <div class="form-group form-row">
                                         <label class="col-md-3">Titulo <span class="required">*</span></label>
                                         <div class="col-md-9">
-                                            <input type="text" formControlName="titleesp" class="form-control" placeholder="Titulo" required>
+                                            <input type="text" formControlName="titleesp" class="form-control" required>
                                             <div *ngIf="titleesp.invalid && (titleesp.dirty || title.touched)" class="error">
                                                 <div *ngIf="titleesp.errors">
                                                     Title is required.
@@ -88,7 +101,7 @@
                                     <div class="form-group form-row">
                                         <label class="col-md-3">Descripción <span class="required">*</span></label>
                                         <div class="col-md-9">
-                                            <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" formControlName="descriptionesp" rows="5" class="form-control" placeholder="Description" required></ckeditor>
+                                            <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" formControlName="descriptionesp" rows="5" class="form-control" required></ckeditor>
 
                                             <div *ngIf="descriptionesp.invalid && (descriptionesp.dirty || descriptionesp.touched)" class="error">
                                                 <div *ngIf="descriptionesp.errors">
@@ -97,11 +110,28 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group form-row">
+                                        <label class="col-md-3">Texto Financiamiento <span class="required">*</span></label>
+                                        <div class="col-md-9">
+                                            <input type="text" formControlName="textFinancEsp" class="form-control" placeholder="Texto Financiamiento" required>
+                                            <div *ngIf="textFinancEsp.invalid && (textFinancEsp.dirty || textFinancEsp.touched)" class="error">
+                                                <div *ngIf="textFinancEsp.errors">
+                                                    Financiamiento is required.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
+                                <!--//-->
+
+
                             </div>
+                            <!--// idiomas-->
+
 
                             <div class="form-group form-row">
-                                <label class="col-md-3">Upload Image</label>
+                                <label class="col-md-3">Upload Image (max - 500kb) | size: 388 x 285px</label>
                                 <div class="col-md-9">
                                     <input type="file" id="image" (change)="onSelectedFile($event)" />
                                     <div [innerHTML]="uploadError" class="error"></div>
@@ -112,7 +142,7 @@
                                 </div>
                             </div>
                             <div class="form-group form-row">
-                                <label class="col-md-3">Button <span class="required">*</span></label>
+                                <label class="col-md-3">Button (url from: square) <span class="required">*</span></label>
                                 <div class="col-md-9">
                                     <textarea formControlName="button" rows="5" class="form-control" placeholder="Button" required></textarea>
                                     <div *ngIf="button.invalid && (button.dirty || button.touched)" class="error">
@@ -134,7 +164,7 @@
                                 </div>
                             </div>
                             <div class="form-group form-row">
-                                <label class="col-md-3">Modal Name <span class="required">*</span></label>
+                                <label class="col-md-3">Modal Name (wharever you want except special characters) <span class="required">*</span></label>
                                 <div class="col-md-9">
                                     <input type="text" formControlName="popup" class="form-control" placeholder="popup" required>
                                     <div *ngIf="popup.invalid && (popup.dirty || popup.touched)" class="error">

@@ -15,33 +15,33 @@ export class WaxService {
   constructor(private http: HttpClient) { }
 
   getWaxs() {
-    return this.http.get<Wax>(this.serverUrl + 'api/adminWaxs').pipe(
+    return this.http.get<Wax>(this.serverUrl + 'api_wax/adminWaxs').pipe(
       catchError(this.handleError)
     );
   }
 
   getWax(id: number) {
-    return this.http.get<Wax>(this.serverUrl + 'api/adminWax/' + id).pipe(
+    return this.http.get<Wax>(this.serverUrl + 'api_wax/adminWax/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createWax(wax) {
-    return this.http.post<any>(this.serverUrl + 'api/createWax/', wax)
+    return this.http.post<any>(this.serverUrl + 'api_wax/createWax/', wax)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateWax(wax, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateWax/' + id, wax)
+    return this.http.post<any>(this.serverUrl + 'api_wax/updateWax/' + id, wax)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteWax(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteWax/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_wax/deleteWax/' + id).pipe(
       catchError(this.handleError)
     );
   }

@@ -45,6 +45,9 @@ export class HypertrophicFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -65,6 +68,9 @@ export class HypertrophicFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
   }
@@ -83,6 +89,9 @@ export class HypertrophicFormComponent implements OnInit {
   get price() { return this.hypertrophicForm.get('price'); }
   get popup() { return this.hypertrophicForm.get('popup'); }
   get button() { return this.hypertrophicForm.get('button'); }
+  get textFinanc() { return this.hypertrophicForm.get('textFinanc'); }
+  get textFinancEsp() { return this.hypertrophicForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.hypertrophicForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -96,6 +105,9 @@ export class HypertrophicFormComponent implements OnInit {
     formData.append('is_featured', this.hypertrophicForm.get('is_featured').value);
     formData.append('is_active', this.hypertrophicForm.get('is_active').value);
     formData.append('image', this.hypertrophicForm.get('image').value);
+    formData.append('textFinanc', this.hypertrophicForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.hypertrophicForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.hypertrophicForm.get('is_activeTf').value);
 
     const id = this.hypertrophicForm.get('id').value;
 

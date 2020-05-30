@@ -13,6 +13,8 @@ export class ManageRestorativeComponent implements OnInit {
   title = 'Manage Restorative';
   restoratives: Restorative;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private restorativeService: RestorativeService, private location: Location) { }
 

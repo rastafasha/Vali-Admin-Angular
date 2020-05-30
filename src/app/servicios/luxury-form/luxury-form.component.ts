@@ -45,6 +45,9 @@ export class LuxuryFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -65,6 +68,9 @@ export class LuxuryFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
   }
@@ -83,6 +89,9 @@ export class LuxuryFormComponent implements OnInit {
   get price() { return this.luxuringForm.get('price'); }
   get popup() { return this.luxuringForm.get('popup'); }
   get button() { return this.luxuringForm.get('button'); }
+  get textFinanc() { return this.luxuringForm.get('textFinanc'); }
+  get textFinancEsp() { return this.luxuringForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.luxuringForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -96,6 +105,9 @@ export class LuxuryFormComponent implements OnInit {
     formData.append('is_featured', this.luxuringForm.get('is_featured').value);
     formData.append('is_active', this.luxuringForm.get('is_active').value);
     formData.append('image', this.luxuringForm.get('image').value);
+    formData.append('textFinanc', this.luxuringForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.luxuringForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.luxuringForm.get('is_activeTf').value);
 
     const id = this.luxuringForm.get('id').value;
 

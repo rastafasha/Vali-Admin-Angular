@@ -15,33 +15,33 @@ export class SpecialtService {
   constructor(private http: HttpClient) { }
 
   getSpecialts() {
-    return this.http.get<Specialt>(this.serverUrl + 'api/adminSpecialts').pipe(
+    return this.http.get<Specialt>(this.serverUrl + 'api_specialt/adminSpecialts').pipe(
       catchError(this.handleError)
     );
   }
 
   getSpecialt(id: number) {
-    return this.http.get<Specialt>(this.serverUrl + 'api/adminSpecialt/' + id).pipe(
+    return this.http.get<Specialt>(this.serverUrl + 'api_specialt/adminSpecialt/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createSpecialt(specialt) {
-    return this.http.post<any>(this.serverUrl + 'api/createSpecialt/', specialt)
+    return this.http.post<any>(this.serverUrl + 'api_specialt/createSpecialt/', specialt)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateSpecialt(specialt, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateSpecialt/' + id, specialt)
+    return this.http.post<any>(this.serverUrl + 'api_specialt/updateSpecialt/' + id, specialt)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteSpecialt(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteSpecialt/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_specialt/deleteSpecialt/' + id).pipe(
       catchError(this.handleError)
     );
   }

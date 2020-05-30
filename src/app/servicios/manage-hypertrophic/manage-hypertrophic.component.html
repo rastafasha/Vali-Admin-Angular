@@ -35,9 +35,10 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let hypertrophic of hypertrophics">
+                        <tr *ngFor="let hypertrophic of hypertrophics | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{hypertrophic.id}}</td>
                             <td><img src="{{hypertrophic.image}}" style="width: 100px"></td>
                             <td>{{hypertrophic.title}}</td>
@@ -45,6 +46,7 @@
                             <td>{{hypertrophic.price}}</td>
                             <td>{{hypertrophic.popup}}</td>
                             <td>{{hypertrophic.created_at | date: 'mediumDate'}}</td>
+                            <td>{{hypertrophic.is_active}}</td>
 
                             <td class="td-actions">
                                 <a [routerLink]="['/hypertrophic/edit', hypertrophic.id]"><i class="la la-edit edit"></i></a>
@@ -52,6 +54,7 @@
                             </td>
                         </tr>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     {{error}}
 
                 </div>

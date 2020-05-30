@@ -15,33 +15,33 @@ export class ClasesService {
   constructor(private http: HttpClient) { }
 
   getClasess() {
-    return this.http.get<Clases>(this.serverUrl + 'api/adminClasess').pipe(
+    return this.http.get<Clases>(this.serverUrl + 'api_classe/adminClasess').pipe(
       catchError(this.handleError)
     );
   }
 
   getClases(id: number) {
-    return this.http.get<Clases>(this.serverUrl + 'api/adminClases/' + id).pipe(
+    return this.http.get<Clases>(this.serverUrl + 'api_classe/adminClases/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createClases(clases) {
-    return this.http.post<any>(this.serverUrl + 'api/createClases/', clases)
+    return this.http.post<any>(this.serverUrl + 'api_classe/createClases/', clases)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateClases(clases, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateClases/' + id, clases)
+    return this.http.post<any>(this.serverUrl + 'api_classe/updateClases/' + id, clases)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteClases(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteClases/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_classe/deleteClases/' + id).pipe(
       catchError(this.handleError)
     );
   }

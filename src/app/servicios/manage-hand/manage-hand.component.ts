@@ -14,6 +14,8 @@ export class ManageHandComponent implements OnInit {
   title = 'Manage Hand';
   hands: Hand;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private handService: HandService, private location: Location) { }
 

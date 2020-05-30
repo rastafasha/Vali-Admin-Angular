@@ -15,33 +15,33 @@ export class LuxuringService {
   constructor(private http: HttpClient) { }
 
   getLuxurings() {
-    return this.http.get<Luxuring>(this.serverUrl + 'api/adminLuxurings').pipe(
+    return this.http.get<Luxuring>(this.serverUrl + 'api_luxuring/adminLuxurings').pipe(
       catchError(this.handleError)
     );
   }
 
   getLuxuring(id: number) {
-    return this.http.get<Luxuring>(this.serverUrl + 'api/adminLuxuring/' + id).pipe(
+    return this.http.get<Luxuring>(this.serverUrl + 'api_luxuring/adminLuxuring/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createLuxuring(luxuring) {
-    return this.http.post<any>(this.serverUrl + 'api/createLuxuring/', luxuring)
+    return this.http.post<any>(this.serverUrl + 'api_luxuring/createLuxuring/', luxuring)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateLuxuring(luxuring, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateLuxuring/' + id, luxuring)
+    return this.http.post<any>(this.serverUrl + 'api_luxuring/updateLuxuring/' + id, luxuring)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteLuxuring(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteLuxuring/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_luxuring/deleteLuxuring/' + id).pipe(
       catchError(this.handleError)
     );
   }

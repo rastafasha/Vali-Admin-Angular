@@ -13,6 +13,8 @@ export class ManageBodyComponent implements OnInit {
   title = 'Manage Body';
   bodys: Body;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private bodyService: BodyService, private location: Location) { }
 

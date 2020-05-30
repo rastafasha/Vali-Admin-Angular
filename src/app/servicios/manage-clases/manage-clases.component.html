@@ -35,9 +35,10 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let clases of clasess">
+                        <tr *ngFor="let clases of clasess | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{clases.id}}</td>
                             <td><img src="{{clases.image}}" style="width: 100px"></td>
                             <td>{{clases.title}}</td>
@@ -45,6 +46,7 @@
                             <td>{{clases.price}}</td>
                             <td>{{clases.popup}}</td>
                             <td>{{clases.created_at | date: 'mediumDate'}}</td>
+                            <td>{{clases.is_active}}</td>
 
                             <td class="td-actions">
                                 <a [routerLink]="['/clases/edit', clases.id]"><i class="la la-edit edit"></i></a>
@@ -52,6 +54,7 @@
                             </td>
                         </tr>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     {{error}}
 
                 </div>

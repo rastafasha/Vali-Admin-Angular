@@ -15,33 +15,33 @@ export class BodyService {
   constructor(private http: HttpClient) { }
 
   getBodys() {
-    return this.http.get<Body>(this.serverUrl + 'api/adminBodys').pipe(
+    return this.http.get<Body>(this.serverUrl + 'api_fibrobody/adminBodys').pipe(
       catchError(this.handleError)
     );
   }
 
   getBody(id: number) {
-    return this.http.get<Body>(this.serverUrl + 'api/adminBody/' + id).pipe(
+    return this.http.get<Body>(this.serverUrl + 'api_fibrobody/adminBody/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createBody(body) {
-    return this.http.post<any>(this.serverUrl + 'api/createBody/', body)
+    return this.http.post<any>(this.serverUrl + 'api_fibrobody/createBody/', body)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateBody(body, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateBody/' + id, body)
+    return this.http.post<any>(this.serverUrl + 'api_fibrobody/updateBody/' + id, body)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteBody(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteBody/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_fibrobody/deleteBody/' + id).pipe(
       catchError(this.handleError)
     );
   }

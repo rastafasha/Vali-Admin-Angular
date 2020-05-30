@@ -35,9 +35,10 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let specialt of specialts">
+                        <tr *ngFor="let specialt of specialts | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{specialt.id}}</td>
                             <td><img src="{{specialt.image}}" style="width: 100px"></td>
                             <td>{{specialt.title}}</td>
@@ -45,6 +46,7 @@
                             <td>{{specialt.price}}</td>
                             <td>{{specialt.popup}}</td>
                             <td>{{specialt.created_at | date: 'mediumDate'}}</td>
+                            <td>{{specialt.is_active}}</td>
 
                             <td class="td-actions">
                                 <a [routerLink]="['/specialt/edit', specialt.id]"><i class="la la-edit edit"></i></a>
@@ -52,6 +54,7 @@
                             </td>
                         </tr>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     {{error}}
 
                 </div>

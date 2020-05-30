@@ -13,6 +13,8 @@ export class ManageSpecialfComponent implements OnInit {
   title = 'Manage Special Face';
   specialfs: Specialf;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private specialfService: SpecialfService, private location: Location) { }
 

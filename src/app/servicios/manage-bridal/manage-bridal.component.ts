@@ -13,6 +13,8 @@ export class ManageBridalComponent implements OnInit {
   title = 'Manage Bridal';
   bridals: Bridal;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private bridalService: BridalService, private location: Location) { }
 

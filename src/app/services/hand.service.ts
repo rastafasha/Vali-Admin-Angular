@@ -15,33 +15,33 @@ export class HandService {
   constructor(private http: HttpClient) { }
 
   getHands() {
-    return this.http.get<Hand>(this.serverUrl + 'api/adminHands').pipe(
+    return this.http.get<Hand>(this.serverUrl + 'api_hand/adminHands').pipe(
       catchError(this.handleError)
     );
   }
 
   getHand(id: number) {
-    return this.http.get<Hand>(this.serverUrl + 'api/adminHand/' + id).pipe(
+    return this.http.get<Hand>(this.serverUrl + 'api_hand/adminHand/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createHand(hand) {
-    return this.http.post<any>(this.serverUrl + 'api/createHand/', hand)
+    return this.http.post<any>(this.serverUrl + 'api_hand/createHand/', hand)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateHand(hand, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateHand/' + id, hand)
+    return this.http.post<any>(this.serverUrl + 'api_hand/updateHand/' + id, hand)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteHand(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteHand/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_hand/deleteHand/' + id).pipe(
       catchError(this.handleError)
     );
   }

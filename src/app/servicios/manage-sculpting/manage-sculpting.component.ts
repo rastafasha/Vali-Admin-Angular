@@ -13,6 +13,8 @@ export class ManageSculptingComponent implements OnInit {
   title = 'Manage Sculpting';
   sculptings: Sculpting;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private sculptingService: SculptingService, private location: Location) { }
 

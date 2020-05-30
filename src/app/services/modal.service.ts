@@ -15,33 +15,33 @@ export class ModalService {
   constructor(private http: HttpClient) { }
 
   getModals() {
-    return this.http.get<Modal>(this.serverUrl + 'api/adminModals').pipe(
+    return this.http.get<Modal>(this.serverUrl + 'api_modal/adminModals').pipe(
       catchError(this.handleError)
     );
   }
 
   getModal(id: number) {
-    return this.http.get<Modal>(this.serverUrl + 'api/adminModal/' + id).pipe(
+    return this.http.get<Modal>(this.serverUrl + 'api_modal/adminModal/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createModal(modal) {
-    return this.http.post<any>(this.serverUrl + 'api/createModal/', modal)
+    return this.http.post<any>(this.serverUrl + 'api_modal/createModal/', modal)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateModal(modal, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateModal/' + id, modal)
+    return this.http.post<any>(this.serverUrl + 'api_modal/updateModal/' + id, modal)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteModal(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteModal/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_modal/deleteModal/' + id).pipe(
       catchError(this.handleError)
     );
   }

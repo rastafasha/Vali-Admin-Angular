@@ -15,33 +15,33 @@ export class AntiageService {
   constructor(private http: HttpClient) { }
 
   getAntiages() {
-    return this.http.get<Antiage>(this.serverUrl + 'api/adminAntiages').pipe(
+    return this.http.get<Antiage>(this.serverUrl + 'api_antiages/adminAntiages').pipe(
       catchError(this.handleError)
     );
   }
 
   getAntiage(id: number) {
-    return this.http.get<Antiage>(this.serverUrl + 'api/adminAntiage/' + id).pipe(
+    return this.http.get<Antiage>(this.serverUrl + 'api_antiages/adminAntiage/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createAntiage(antiage) {
-    return this.http.post<any>(this.serverUrl + 'api/createAntiage/', antiage)
+    return this.http.post<any>(this.serverUrl + 'api_antiages/createAntiage/', antiage)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateAntiage(antiage, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateAntiage/' + id, antiage)
+    return this.http.post<any>(this.serverUrl + 'api_antiages/updateAntiage/' + id, antiage)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteAntiage(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteAntiage/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_antiages/deleteAntiage/' + id).pipe(
       catchError(this.handleError)
     );
   }

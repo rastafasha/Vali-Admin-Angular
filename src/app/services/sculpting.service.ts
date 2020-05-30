@@ -15,33 +15,33 @@ export class SculptingService {
   constructor(private http: HttpClient) { }
 
   getSculptings() {
-    return this.http.get<Sculpting>(this.serverUrl + 'api/adminSculptings').pipe(
+    return this.http.get<Sculpting>(this.serverUrl + 'api_sculpting/adminSculptings').pipe(
       catchError(this.handleError)
     );
   }
 
   getSculpting(id: number) {
-    return this.http.get<Sculpting>(this.serverUrl + 'api/adminSculpting/' + id).pipe(
+    return this.http.get<Sculpting>(this.serverUrl + 'api_sculpting/adminSculpting/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createSculpting(sculpting) {
-    return this.http.post<any>(this.serverUrl + 'api/createSculpting/', sculpting)
+    return this.http.post<any>(this.serverUrl + 'api_sculpting/createSculpting/', sculpting)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateSculpting(sculpting, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateSculpting/' + id, sculpting)
+    return this.http.post<any>(this.serverUrl + 'api_sculpting/updateSculpting/' + id, sculpting)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteSculpting(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteSculpting/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_sculpting/deleteSculpting/' + id).pipe(
       catchError(this.handleError)
     );
   }

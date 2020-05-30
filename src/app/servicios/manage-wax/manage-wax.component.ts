@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { WaxService } from '../../services/wax.service';
 import { Wax } from '../../models/wax';
 import { Location } from '@angular/common';
+import {PaginatePipe, PaginationService} from 'ng2-pagination';
+
 
 @Component({
   selector: 'app-manage-wax',
@@ -14,6 +16,9 @@ export class ManageWaxComponent implements OnInit {
   waxs: Wax;
   error: string;
   data:string;
+
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private waxService: WaxService, private location: Location) { }
 

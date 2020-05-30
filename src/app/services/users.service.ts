@@ -10,38 +10,40 @@ import { environment } from '../../environments/environment';
 })
 export class UserService {
 
+  user: User;
+
   serverUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get<User>(this.serverUrl + 'api/adminUsers').pipe(
+    return this.http.get<User>(this.serverUrl + 'api_user/adminUsers').pipe(
       catchError(this.handleError)
     );
   }
 
   getUser(id: number) {
-    return this.http.get<User>(this.serverUrl + 'api/adminUser/' + id).pipe(
+    return this.http.get<User>(this.serverUrl + 'api_user/adminUser/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createUser(user) {
-    return this.http.post<any>(this.serverUrl + 'api/createUser/', user)
+    return this.http.post<any>(this.serverUrl + 'api_user/createUser/', user)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateUser(user, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateUser/' + id, user)
+    return this.http.post<any>(this.serverUrl + 'api_user/updateUser/' + id, user)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteUser(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteUser/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_user/deleteUser/' + id).pipe(
       catchError(this.handleError)
     );
   }

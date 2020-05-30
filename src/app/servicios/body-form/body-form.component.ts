@@ -45,6 +45,9 @@ export class BodyFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -65,6 +68,9 @@ export class BodyFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
   }
@@ -83,6 +89,9 @@ export class BodyFormComponent implements OnInit {
   get price() { return this.bodyForm.get('price'); }
   get popup() { return this.bodyForm.get('popup'); }
   get button() { return this.bodyForm.get('button'); }
+  get textFinanc() { return this.bodyForm.get('textFinanc'); }
+  get textFinancEsp() { return this.bodyForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.bodyForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -96,6 +105,9 @@ export class BodyFormComponent implements OnInit {
     formData.append('is_featured', this.bodyForm.get('is_featured').value);
     formData.append('is_active', this.bodyForm.get('is_active').value);
     formData.append('image', this.bodyForm.get('image').value);
+    formData.append('textFinanc', this.bodyForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.bodyForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.bodyForm.get('is_activeTf').value);
 
     const id = this.bodyForm.get('id').value;
 

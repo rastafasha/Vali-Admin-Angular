@@ -35,9 +35,10 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let calming of calmings">
+                        <tr *ngFor="let calming of calmings | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{calming.id}}</td>
                             <td><img src="{{calming.image}}" style="width: 100px"></td>
                             <td>{{calming.title}}</td>
@@ -45,6 +46,7 @@
                             <td>{{calming.price}}</td>
                             <td>{{calming.popup}}</td>
                             <td>{{calming.created_at | date: 'mediumDate'}}</td>
+                            <td>{{calming.is_active}}</td>
 
 
                             <td class="td-actions">
@@ -53,6 +55,7 @@
                             </td>
                         </tr>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     {{error}}
 
                 </div>

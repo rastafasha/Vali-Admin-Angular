@@ -15,33 +15,33 @@ export class BrighteningService {
   constructor(private http: HttpClient) { }
 
   getBrightenings() {
-    return this.http.get<Brightening>(this.serverUrl + 'api/adminBrightenings').pipe(
+    return this.http.get<Brightening>(this.serverUrl + 'api_brightening/adminBrightenings').pipe(
       catchError(this.handleError)
     );
   }
 
   getBrightening(id: number) {
-    return this.http.get<Brightening>(this.serverUrl + 'api/adminBrightening/' + id).pipe(
+    return this.http.get<Brightening>(this.serverUrl + 'api_brightening/adminBrightening/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createBrightening(brightening) {
-    return this.http.post<any>(this.serverUrl + 'api/createBrightening/', brightening)
+    return this.http.post<any>(this.serverUrl + 'api_brightening/createBrightening/', brightening)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateBrightening(brightening, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateBrightening/' + id, brightening)
+    return this.http.post<any>(this.serverUrl + 'api_brightening/updateBrightening/' + id, brightening)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteBrightening(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteBrightening/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_brightening/deleteBrightening/' + id).pipe(
       catchError(this.handleError)
     );
   }

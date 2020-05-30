@@ -13,6 +13,8 @@ export class ManageCalmingComponent implements OnInit {
   title = 'Manage Calming';
   calmings: Calming;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private calmingService: CalmingService,  private location: Location) { }
 

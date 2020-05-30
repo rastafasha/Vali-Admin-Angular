@@ -15,6 +15,8 @@ export class ManagePermanentComponent implements OnInit {
   permanents: Permanent;
   error: string;
 
+  p: Number = 1;
+  count: Number = 5;
   constructor(private permanentService: PermanentService, private location: Location) { }
 
   ngOnInit() {

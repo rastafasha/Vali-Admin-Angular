@@ -24,26 +24,26 @@ export class ContactService {
   }
 
   getContacts() {
-    return this.http.get<Contact>(this.serverUrl + 'api/adminContacts').pipe(
+    return this.http.get<Contact>(this.serverUrl + 'api_contact/adminContacts').pipe(
       catchError(this.handleError)
     );
   }
 
   getContact(id: number) {
-    return this.http.get<Contact>(this.serverUrl + 'api/adminContact/' + id).pipe(
+    return this.http.get<Contact>(this.serverUrl + 'api_contact/adminContact/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   contactForm(formdata: Contact) {
-    return this.http.post<Contact>(this.serverUrl + 'api/contact', formdata, this.httpOptions)
+    return this.http.post<Contact>(this.serverUrl + 'api_contact/contact', formdata, this.httpOptions)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteContact(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteContact/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_contact/deleteContact/' + id).pipe(
       catchError(this.handleError)
     );
   }

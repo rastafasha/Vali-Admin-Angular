@@ -15,33 +15,33 @@ export class PermanentService {
   constructor(private http: HttpClient) { }
 
   getPermanents() {
-    return this.http.get<Permanent>(this.serverUrl + 'api/adminPermanents').pipe(
+    return this.http.get<Permanent>(this.serverUrl + 'api_permanent/adminPermanents').pipe(
       catchError(this.handleError)
     );
   }
 
   getPermanent(id: number) {
-    return this.http.get<Permanent>(this.serverUrl + 'api/adminPermanent/' + id).pipe(
+    return this.http.get<Permanent>(this.serverUrl + 'api_permanent/adminPermanent/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createPermanent(permanent) {
-    return this.http.post<any>(this.serverUrl + 'api/createPermanent/', permanent)
+    return this.http.post<any>(this.serverUrl + 'api_permanent/createPermanent/', permanent)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updatePermanent(permanent, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updatePermanent/' + id, permanent)
+    return this.http.post<any>(this.serverUrl + 'api_permanent/updatePermanent/' + id, permanent)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deletePermanent(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deletePermanent/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_permanent/deletePermanent/' + id).pipe(
       catchError(this.handleError)
     );
   }

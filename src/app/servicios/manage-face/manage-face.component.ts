@@ -13,6 +13,8 @@ export class ManageFaceComponent implements OnInit {
   title = 'Manage Face';
   fibrofaces: Fibroface;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private fibrofaceService: FibrofaceService, private location: Location) { }
 

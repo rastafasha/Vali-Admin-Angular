@@ -13,6 +13,8 @@ export class ManageClasesComponent implements OnInit {
   title = 'Manage Clases';
   clasess: Clases;
   error: string;
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private clasesService: ClasesService, private location: Location) { }
 

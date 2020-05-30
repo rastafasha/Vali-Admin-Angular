@@ -15,33 +15,33 @@ export class BridalService {
   constructor(private http: HttpClient) { }
 
   getBridals() {
-    return this.http.get<Bridal>(this.serverUrl + 'api/adminBridals').pipe(
+    return this.http.get<Bridal>(this.serverUrl + 'api_bridal/adminBridals').pipe(
       catchError(this.handleError)
     );
   }
 
   getBridal(id: number) {
-    return this.http.get<Bridal>(this.serverUrl + 'api/adminBridal/' + id).pipe(
+    return this.http.get<Bridal>(this.serverUrl + 'api_bridal/adminBridal/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createBridal(bridal) {
-    return this.http.post<any>(this.serverUrl + 'api/createBridal/', bridal)
+    return this.http.post<any>(this.serverUrl + 'api_bridal/createBridal/', bridal)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateBridal(bridal, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateBridal/' + id, bridal)
+    return this.http.post<any>(this.serverUrl + 'api_bridal/updateBridal/' + id, bridal)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteBridal(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteBridal/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_bridal/deleteBridal/' + id).pipe(
       catchError(this.handleError)
     );
   }

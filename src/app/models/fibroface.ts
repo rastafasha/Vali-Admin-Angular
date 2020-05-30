@@ -12,5 +12,8 @@ export class Fibroface {
     is_featured: boolean;
     is_active: boolean;
     created_at: Date;
+    textFinanc: string;
+    textFinancEsp: string;
+    is_activeTf: boolean;
 }
 

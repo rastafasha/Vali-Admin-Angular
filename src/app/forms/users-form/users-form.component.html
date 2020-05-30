@@ -1,0 +1,103 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="content-inner">
+    <div class="container-fluid">
+
+        <!-- Begin Page Header-->
+        <div class="row">
+            <div class="page-header">
+                <div class="d-flex align-items-center">
+                    <h2 class="page-header-title">{{pageTitle}}</h2>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Header -->
+        <div class="row flex-row">
+            <div class="col-12">
+                <!-- Form -->
+                <div class="widget has-shadow">
+                    <div class="user-form widget-body">
+                        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+                            <div class="form-group form-row">
+                                <label class="col-md-3">username <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" formControlName="username" class="form-control" placeholder="username" required>
+                                    <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error">
+                                        <div *ngIf="username.errors">
+                                            username is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">password <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" formControlName="password" class="form-control" placeholder="password" required>
+                                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+                                        <div *ngIf="username.errors">
+                                            password is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">first_name <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" formControlName="first_name" class="form-control" placeholder="first_name" required>
+                                    <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)" class="error">
+                                        <div *ngIf="username.errors">
+                                            first_name is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">last_name <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" formControlName="last_name" class="form-control" placeholder="last_name" required>
+                                    <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)" class="error">
+                                        <div *ngIf="username.errors">
+                                            last_name is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Is Active</label>
+                                <div class="col-md-9">
+                                    <input type="radio" formControlName="is_active" value="1" /> Yes
+                                    <input type="radio" formControlName="is_active" value="0" /> No
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Upload Image (max - 500kb)</label>
+                                <div class="col-md-9">
+                                    <input type="file" id="image" (change)="onSelectedFile($event)" />
+                                    <div [innerHTML]="uploadError" class="error"></div>
+                                    <div *ngIf="imagePath">
+                                        <br />
+                                        <img [src]="imagePath" width="100px">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group form-row">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <input type="hidden" formControlName="id">
+                                    <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {{error}}
+                </div>
+                <!-- End Form -->
+            </div>
+        </div>
+        <!-- End Row -->
+    </div>
+    <!-- End Container -->
+    <app-footer></app-footer>

@@ -35,9 +35,10 @@
                             <th>Price</th>
                             <th>Modal</th>
                             <th>Created At</th>
+                            <th>Is Active</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let specialf of specialfs">
+                        <tr *ngFor="let specialf of specialfs | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{specialf.id}}</td>
                             <td><img src="{{specialf.image}}" style="width: 100px"></td>
                             <td>{{specialf.title}}</td>
@@ -45,6 +46,7 @@
                             <td>{{specialf.price}}</td>
                             <td>{{specialf.popup}}</td>
                             <td>{{specialf.created_at | date: 'mediumDate'}}</td>
+                            <td>{{specialf.is_active}}</td>
 
                             <td class="td-actions">
                                 <a [routerLink]="['/specialf/edit', specialf.id]"><i class="la la-edit edit"></i></a>
@@ -52,6 +54,7 @@
                             </td>
                         </tr>
                     </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
                     {{error}}
 
                 </div>

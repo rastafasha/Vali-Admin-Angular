@@ -15,33 +15,33 @@ export class SpecialfService {
   constructor(private http: HttpClient) { }
 
   getSpecialfs() {
-    return this.http.get<Specialf>(this.serverUrl + 'api/adminSpecialfs').pipe(
+    return this.http.get<Specialf>(this.serverUrl + 'api_fspecial/adminSpecialfs').pipe(
       catchError(this.handleError)
     );
   }
 
   getSpecialf(id: number) {
-    return this.http.get<Specialf>(this.serverUrl + 'api/adminSpecialf/' + id).pipe(
+    return this.http.get<Specialf>(this.serverUrl + 'api_fspecial/adminSpecialf/' + id).pipe(
       catchError(this.handleError)
     );
   }
 
   createSpecialf(specialf) {
-    return this.http.post<any>(this.serverUrl + 'api/createSpecialf/', specialf)
+    return this.http.post<any>(this.serverUrl + 'api_fspecial/createSpecialf/', specialf)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   updateSpecialf(specialf, id: number) {
-    return this.http.post<any>(this.serverUrl + 'api/updateSpecialf/' + id, specialf)
+    return this.http.post<any>(this.serverUrl + 'api_fspecial/updateSpecialf/' + id, specialf)
     .pipe(
       catchError(this.handleError)
     );
   }
 
   deleteSpecialf(id: number) {
-    return this.http.delete(this.serverUrl + 'api/deleteSpecialf/' + id).pipe(
+    return this.http.delete(this.serverUrl + 'api_fspecial/deleteSpecialf/' + id).pipe(
       catchError(this.handleError)
     );
   }

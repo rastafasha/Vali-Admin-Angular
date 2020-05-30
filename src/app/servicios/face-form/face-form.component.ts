@@ -45,6 +45,9 @@ export class FaceFormComponent implements OnInit {
             button: res.button,
             is_featured: res.is_featured,
             is_active: res.is_active,
+            textFinanc: res.textFinanc,
+            textFinancEsp: res.textFinancEsp,
+            is_activeTf: res.is_activeTf,
             id: res.id
           });
           this.imagePath = res.image;
@@ -65,6 +68,9 @@ export class FaceFormComponent implements OnInit {
       button: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
+      textFinanc: [''],
+      textFinancEsp: [''],
+      is_activeTf: [''],
       image: [''],
     });
   }
@@ -83,6 +89,9 @@ export class FaceFormComponent implements OnInit {
   get price() { return this.fibrofaceForm.get('price'); }
   get popup() { return this.fibrofaceForm.get('popup'); }
   get button() { return this.fibrofaceForm.get('button'); }
+  get textFinanc() { return this.fibrofaceForm.get('textFinanc'); }
+  get textFinancEsp() { return this.fibrofaceForm.get('textFinancEsp'); }
+  get is_activeTf() { return this.fibrofaceForm.get('is_activeTf'); }
 
   onSubmit() {
     const formData = new FormData();
@@ -96,6 +105,9 @@ export class FaceFormComponent implements OnInit {
     formData.append('is_featured', this.fibrofaceForm.get('is_featured').value);
     formData.append('is_active', this.fibrofaceForm.get('is_active').value);
     formData.append('image', this.fibrofaceForm.get('image').value);
+    formData.append('textFinanc', this.fibrofaceForm.get('textFinanc').value);
+    formData.append('textFinancEsp', this.fibrofaceForm.get('textFinancEsp').value);
+    formData.append('is_activeTf', this.fibrofaceForm.get('is_activeTf').value);
 
     const id = this.fibrofaceForm.get('id').value;
 
