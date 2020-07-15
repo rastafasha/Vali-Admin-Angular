@@ -47,6 +47,7 @@ export class MembershipFormComponent implements OnInit {
             descripcionesp: res.descripcionesp,
             descripcionesp2: res.descripcionesp2,
             video: res.video,
+            videoEsp: res.videoEsp,
             verVideo: res.verVideo,
             verImagen: res.verImagen,
             is_active: res.is_active,
@@ -66,6 +67,7 @@ export class MembershipFormComponent implements OnInit {
       descripcionesp: ['', Validators.required],
       descripcionesp2: ['', Validators.required],
       video: [''],
+      videoEsp: [''],
       verVideo: [''],
       verImagen: [''],
       is_active: ['1'],
@@ -87,6 +89,7 @@ export class MembershipFormComponent implements OnInit {
   get descripcionesp() { return this.membershipForm.get('descripcionesp'); }
   get descripcionesp2() { return this.membershipForm.get('descripcionesp2'); }
   get video() { return this.membershipForm.get('video'); }
+  get videoEsp() { return this.membershipForm.get('videoEsp'); }
   get verVideo() { return this.membershipForm.get('verVideo'); }
   get verImagen() { return this.membershipForm.get('verImagen'); }
 
@@ -99,6 +102,7 @@ export class MembershipFormComponent implements OnInit {
     formData.append('descripcionesp', this.membershipForm.get('descripcionesp').value);
     formData.append('descripcionesp2', this.membershipForm.get('descripcionesp2').value);
     formData.append('video', this.membershipForm.get('video').value);
+    formData.append('videoEsp', this.membershipForm.get('videoEsp').value);
     formData.append('verVideo', this.membershipForm.get('verVideo').value);
     formData.append('verImagen', this.membershipForm.get('verImagen').value);
     formData.append('is_active', this.membershipForm.get('is_active').value);

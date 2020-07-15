@@ -1,0 +1,4 @@
+.ck.ck-editor__editable_inline ul li,
+.ck-editor__editable ul li {
+    list-style: disc !important;
+}

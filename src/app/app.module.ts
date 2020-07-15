@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 
 // Import Angular plugin.
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 // paginacion
 import { Ng2PaginationModule} from 'ng2-pagination';
 

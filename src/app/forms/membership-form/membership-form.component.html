@@ -23,14 +23,6 @@
                 <div class="widget has-shadow">
                     <div class="antiage-form widget-body">
                         <form [formGroup]="membershipForm" (ngSubmit)="onSubmit()">
-
-                            <!--div class="form-group form-row">
-                                <label class="col-md-3">Is Featured</label>
-                                <div class="col-md-9">
-                                    <input type="radio" formControlName="is_featured" value="1" /> Yes
-                                    <input type="radio" formControlName="is_featured" value="0" /> No
-                                </div>
-                            </div-->
                             <div class="form-group form-row">
                                 <label class="col-md-3">Is Active</label>
                                 <div class="col-md-9">
@@ -42,7 +34,7 @@
                                 <li class="active"><a data-toggle="tab" href="#home">English</a></li>
                                 <li><a data-toggle="tab" href="#menu1">Español</a></li>
                             </ul>
-
+                            <!--English-->
                             <div class="tab-content">
                                 <div id="home" class="tab-pane active">
                                     <div class="form-group form-row">
@@ -81,9 +73,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group form-row">
+                                        <label class="col-md-3">Video (url from: youtube) <span class="required">*</span></label>
+                                        <div class="col-md-9">
+                                            <textarea formControlName="video" rows="5" class="form-control" placeholder="video"></textarea>
 
-
+                                        </div>
+                                    </div>
                                 </div>
+                                <!--Español-->
                                 <div id="menu1" class="tab-pane fade">
                                     <div class="form-group form-row">
                                         <label class="col-md-3">Titulo <span class="required">*</span></label>
@@ -116,7 +114,14 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group form-row">
+                                        <label class="col-md-3">Video (url from: youtube) <span class="required">*</span></label>
+                                        <div class="col-md-9">
+                                            <textarea formControlName="videoEsp" rows="5" class="form-control" placeholder="video"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
+                                <!---//Español-->
                             </div>
 
 
@@ -139,19 +144,13 @@
                                 </div>
                             </div>
                             <div class="form-group form-row">
-                                <label class="col-md-3">Video (url from: youtube) <span class="required">*</span></label>
-                                <div class="col-md-9">
-                                    <textarea formControlName="video" rows="5" class="form-control" placeholder="video"></textarea>
-
-                                </div>
-                            </div>
-                            <div class="form-group form-row">
                                 <label class="col-md-3">Video Is Active</label>
                                 <div class="col-md-9">
                                     <input type="radio" formControlName="verVideo" value="displblok" /> Yes
                                     <input type="radio" formControlName="verVideo" value="displNone" /> No
                                 </div>
                             </div>
+
                             <div class="form-group form-row">
                                 <label class="col-md-3"></label>
                                 <div class="col-md-9">

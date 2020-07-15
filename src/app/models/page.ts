@@ -11,7 +11,7 @@ export class Page {
     image: string;
     verVideo: string;
     verImagen: string;
-    is_featured: boolean;
+    videoEsp: string;
     is_active: boolean;
     created_at: Date;
 }
