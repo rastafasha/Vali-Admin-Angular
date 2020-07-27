@@ -31,9 +31,9 @@ export class ManageGalleryComponent implements OnInit {
       }
       return;
     }
-    
+
     console.log(is_active('0'));
-    
+
     console.log(is_active('1'));
 
   }

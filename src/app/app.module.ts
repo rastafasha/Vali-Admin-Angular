@@ -11,7 +11,7 @@ import { AuthModule } from './auth/auth.module';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 // paginacion
-import { Ng2PaginationModule} from 'ng2-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 // Pipes
 import { PipesModule } from './pipes/pipes.module';
@@ -147,7 +147,7 @@ import { ManageMembershipComponent } from './manage/manage-membership/manage-mem
     FormsModule,
     ReactiveFormsModule,
     CKEditorModule,
-    Ng2PaginationModule,
+    NgxPaginationModule,
     PipesModule,
     ShareButtonsModule.withConfig({
       debug: true

@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-            "aot": true,
+                        "aot": true,
                         "outputPath": "dist/admin",
                         "index": "src/index.html",
                         "main": "src/main.ts",
@@ -28,8 +28,7 @@
                             "./node_modules/froala-editor/css/froala_editor.pkgd.min.css",
                             "./node_modules/froala-editor/css/froala_style.min.css"
                         ],
-                        "scripts": [],
-                        "es5BrowserSupport": true
+                        "scripts": []
                     },
                     "configurations": {
                         "production": {
