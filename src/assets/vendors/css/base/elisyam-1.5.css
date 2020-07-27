@@ -19,7 +19,7 @@ Author: SAEROX
   02.06) Tooltip
   02.07) Notifications
   02.08) Datepicker
-  02.09) Hover 
+  02.09) Hover
 03) Layout
   03.01) Dashboard
   03.02) Header
@@ -5985,8 +5985,8 @@ section.forms form small {
 /*
  * 01. DASHBOARD
  *
-/* 
- * SOCIAL 
+/*
+ * SOCIAL
  */
 
 .db-social .jumbotron {
@@ -6650,8 +6650,8 @@ section.forms form small {
 }
 
 
-/* 
- * SMARTHOME 
+/*
+ * SMARTHOME
  */
 
 .db-smarthome.page {
@@ -6749,7 +6749,7 @@ section.forms form small {
 }
 
 .navbar-header .logo-big {
-    width: 170px;
+    width: 80px;
 }
 
 .navbar-header .logo-small {
