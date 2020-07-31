@@ -48,11 +48,13 @@ export class WaxFormComponent implements OnInit {
             price: res.price,
             popup: res.popup,
             button: res.button,
+            buttonEs: res.buttonEs,
             is_featured: res.is_featured,
             is_active: res.is_active,
             textFinanc: res.textFinanc,
             textFinancEsp: res.textFinancEsp,
             is_activeTf: res.is_activeTf,
+            target: res.target,
             id: res.id
           });
           this.imagePath = res.image;
@@ -71,11 +73,13 @@ export class WaxFormComponent implements OnInit {
       price: ['', Validators.required],
       popup: ['', Validators.required],
       button: ['', Validators.required],
+      buttonEs: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
-      textFinanc: [''],
-      textFinancEsp: [''],
-      is_activeTf: [''],
+      textFinanc: ['', Validators.required],
+      textFinancEsp: ['', Validators.required],
+      is_activeTf: ['', Validators.required],
+      target: ['', Validators.required],
       image: [''],
     });
 
@@ -95,6 +99,8 @@ export class WaxFormComponent implements OnInit {
   get price() { return this.waxForm.get('price'); }
   get popup() { return this.waxForm.get('popup'); }
   get button() { return this.waxForm.get('button'); }
+  get buttonEs() { return this.waxForm.get('buttonEs'); }
+  get target() { return this.waxForm.get('target'); }
   get textFinanc() { return this.waxForm.get('textFinanc'); }
   get textFinancEsp() { return this.waxForm.get('textFinancEsp'); }
   get is_activeTf() { return this.waxForm.get('is_activeTf'); }
@@ -108,6 +114,8 @@ export class WaxFormComponent implements OnInit {
     formData.append('price', this.waxForm.get('price').value);
     formData.append('popup', this.waxForm.get('popup').value);
     formData.append('button', this.waxForm.get('button').value);
+    formData.append('buttonEs', this.waxForm.get('buttonEs').value);
+    formData.append('target', this.waxForm.get('target').value);
     formData.append('is_featured', this.waxForm.get('is_featured').value);
     formData.append('is_active', this.waxForm.get('is_active').value);
     formData.append('image', this.waxForm.get('image').value);

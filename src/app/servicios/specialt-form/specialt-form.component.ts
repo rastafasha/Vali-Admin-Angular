@@ -44,11 +44,13 @@ export class SpecialtFormComponent implements OnInit {
             price: res.price,
             popup: res.popup,
             button: res.button,
+            buttonEs: res.buttonEs,
             is_featured: res.is_featured,
             is_active: res.is_active,
             textFinanc: res.textFinanc,
             textFinancEsp: res.textFinancEsp,
             is_activeTf: res.is_activeTf,
+            target: res.target,
             id: res.id
           });
           this.imagePath = res.image;
@@ -67,11 +69,13 @@ export class SpecialtFormComponent implements OnInit {
       price: ['', Validators.required],
       popup: ['', Validators.required],
       button: ['', Validators.required],
+      buttonEs: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
-      textFinanc: [''],
-      textFinancEsp: [''],
-      is_activeTf: [''],
+      textFinanc: ['', Validators.required],
+      textFinancEsp: ['', Validators.required],
+      is_activeTf: ['', Validators.required],
+      target: ['', Validators.required],
       image: [''],
     });
   }
@@ -90,6 +94,8 @@ export class SpecialtFormComponent implements OnInit {
   get price() { return this.specialtForm.get('price'); }
   get popup() { return this.specialtForm.get('popup'); }
   get button() { return this.specialtForm.get('button'); }
+  get buttonEs() { return this.specialtForm.get('buttonEs'); }
+  get target() { return this.specialtForm.get('target'); }
   get textFinanc() { return this.specialtForm.get('textFinanc'); }
   get textFinancEsp() { return this.specialtForm.get('textFinancEsp'); }
   get is_activeTf() { return this.specialtForm.get('is_activeTf'); }
@@ -104,6 +110,8 @@ export class SpecialtFormComponent implements OnInit {
     formData.append('price', this.specialtForm.get('price').value);
     formData.append('popup', this.specialtForm.get('popup').value);
     formData.append('button', this.specialtForm.get('button').value);
+    formData.append('buttonEs', this.specialtForm.get('buttonEs').value);
+    formData.append('target', this.specialtForm.get('target').value);
     formData.append('is_featured', this.specialtForm.get('is_featured').value);
     formData.append('is_active', this.specialtForm.get('is_active').value);
     formData.append('image', this.specialtForm.get('image').value);

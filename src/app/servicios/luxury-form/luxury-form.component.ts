@@ -43,11 +43,13 @@ export class LuxuryFormComponent implements OnInit {
             price: res.price,
             popup: res.popup,
             button: res.button,
+            buttonEs: res.buttonEs,
             is_featured: res.is_featured,
             is_active: res.is_active,
             textFinanc: res.textFinanc,
             textFinancEsp: res.textFinancEsp,
             is_activeTf: res.is_activeTf,
+            target: res.target,
             id: res.id
           });
           this.imagePath = res.image;
@@ -66,11 +68,13 @@ export class LuxuryFormComponent implements OnInit {
       price: ['', Validators.required],
       popup: ['', Validators.required],
       button: ['', Validators.required],
+      buttonEs: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
-      textFinanc: [''],
-      textFinancEsp: [''],
-      is_activeTf: [''],
+      textFinanc: ['', Validators.required],
+      textFinancEsp: ['', Validators.required],
+      is_activeTf: ['', Validators.required],
+      target: [''],
       image: [''],
     });
   }
@@ -89,6 +93,8 @@ export class LuxuryFormComponent implements OnInit {
   get price() { return this.luxuringForm.get('price'); }
   get popup() { return this.luxuringForm.get('popup'); }
   get button() { return this.luxuringForm.get('button'); }
+  get buttonEs() { return this.luxuringForm.get('buttonEs'); }
+  get target() { return this.luxuringForm.get('target'); }
   get textFinanc() { return this.luxuringForm.get('textFinanc'); }
   get textFinancEsp() { return this.luxuringForm.get('textFinancEsp'); }
   get is_activeTf() { return this.luxuringForm.get('is_activeTf'); }
@@ -102,6 +108,8 @@ export class LuxuryFormComponent implements OnInit {
     formData.append('price', this.luxuringForm.get('price').value);
     formData.append('popup', this.luxuringForm.get('popup').value);
     formData.append('button', this.luxuringForm.get('button').value);
+    formData.append('buttonEs', this.luxuringForm.get('buttonEs').value);
+    formData.append('target', this.luxuringForm.get('target').value);
     formData.append('is_featured', this.luxuringForm.get('is_featured').value);
     formData.append('is_active', this.luxuringForm.get('is_active').value);
     formData.append('image', this.luxuringForm.get('image').value);

@@ -43,11 +43,13 @@ export class CalmingFormComponent implements OnInit {
             price: res.price,
             popup: res.popup,
             button: res.button,
+            buttonEs: res.buttonEs,
             is_featured: res.is_featured,
             is_active: res.is_active,
             textFinanc: res.textFinanc,
             textFinancEsp: res.textFinancEsp,
             is_activeTf: res.is_activeTf,
+            target: res.target,
             id: res.id
           });
           this.imagePath = res.image;
@@ -66,11 +68,13 @@ export class CalmingFormComponent implements OnInit {
       price: ['', Validators.required],
       popup: ['', Validators.required],
       button: ['', Validators.required],
+      buttonEs: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
-      textFinanc: [''],
-      textFinancEsp: [''],
-      is_activeTf: [''],
+      textFinanc: ['', Validators.required],
+      textFinancEsp: ['', Validators.required],
+      is_activeTf: ['', Validators.required],
+      target: ['', Validators.required],
       image: [''],
     });
   }
@@ -89,6 +93,8 @@ export class CalmingFormComponent implements OnInit {
   get price() { return this.calmingForm.get('price'); }
   get popup() { return this.calmingForm.get('popup'); }
   get button() { return this.calmingForm.get('button'); }
+  get buttonEs() { return this.calmingForm.get('buttonEs'); }
+  get target() { return this.calmingForm.get('target'); }
   get textFinanc() { return this.calmingForm.get('textFinanc'); }
   get textFinancEsp() { return this.calmingForm.get('textFinancEsp'); }
   get is_activeTf() { return this.calmingForm.get('is_activeTf'); }
@@ -102,6 +108,8 @@ export class CalmingFormComponent implements OnInit {
     formData.append('price', this.calmingForm.get('price').value);
     formData.append('popup', this.calmingForm.get('popup').value);
     formData.append('button', this.calmingForm.get('button').value);
+    formData.append('buttonEs', this.calmingForm.get('buttonEs').value);
+    formData.append('target', this.calmingForm.get('target').value);
     formData.append('is_featured', this.calmingForm.get('is_featured').value);
     formData.append('is_active', this.calmingForm.get('is_active').value);
     formData.append('image', this.calmingForm.get('image').value);

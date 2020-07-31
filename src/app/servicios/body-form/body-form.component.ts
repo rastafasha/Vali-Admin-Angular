@@ -43,11 +43,13 @@ export class BodyFormComponent implements OnInit {
             price: res.price,
             popup: res.popup,
             button: res.button,
+            buttonEs: res.buttonEs,
             is_featured: res.is_featured,
             is_active: res.is_active,
             textFinanc: res.textFinanc,
             textFinancEsp: res.textFinancEsp,
             is_activeTf: res.is_activeTf,
+            target: res.target,
             id: res.id
           });
           this.imagePath = res.image;
@@ -66,11 +68,13 @@ export class BodyFormComponent implements OnInit {
       price: ['', Validators.required],
       popup: ['', Validators.required],
       button: ['', Validators.required],
+      buttonEs: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
-      textFinanc: [''],
-      textFinancEsp: [''],
-      is_activeTf: [''],
+      textFinanc: ['', Validators.required],
+      textFinancEsp: ['', Validators.required],
+      is_activeTf: ['', Validators.required],
+      target: ['', Validators.required],
       image: [''],
     });
   }
@@ -89,6 +93,8 @@ export class BodyFormComponent implements OnInit {
   get price() { return this.bodyForm.get('price'); }
   get popup() { return this.bodyForm.get('popup'); }
   get button() { return this.bodyForm.get('button'); }
+  get buttonEs() { return this.bodyForm.get('buttonEs'); }
+  get target() { return this.bodyForm.get('target'); }
   get textFinanc() { return this.bodyForm.get('textFinanc'); }
   get textFinancEsp() { return this.bodyForm.get('textFinancEsp'); }
   get is_activeTf() { return this.bodyForm.get('is_activeTf'); }
@@ -102,6 +108,8 @@ export class BodyFormComponent implements OnInit {
     formData.append('price', this.bodyForm.get('price').value);
     formData.append('popup', this.bodyForm.get('popup').value);
     formData.append('button', this.bodyForm.get('button').value);
+    formData.append('buttonEs', this.bodyForm.get('buttonEs').value);
+    formData.append('target', this.bodyForm.get('target').value);
     formData.append('is_featured', this.bodyForm.get('is_featured').value);
     formData.append('is_active', this.bodyForm.get('is_active').value);
     formData.append('image', this.bodyForm.get('image').value);

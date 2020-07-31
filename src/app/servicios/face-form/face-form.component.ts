@@ -43,11 +43,13 @@ export class FaceFormComponent implements OnInit {
             price: res.price,
             popup: res.popup,
             button: res.button,
+            buttonEs: res.buttonEs,
             is_featured: res.is_featured,
             is_active: res.is_active,
             textFinanc: res.textFinanc,
             textFinancEsp: res.textFinancEsp,
             is_activeTf: res.is_activeTf,
+            target: res.target,
             id: res.id
           });
           this.imagePath = res.image;
@@ -66,11 +68,13 @@ export class FaceFormComponent implements OnInit {
       price: ['', Validators.required],
       popup: ['', Validators.required],
       button: ['', Validators.required],
+      buttonEs: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
-      textFinanc: [''],
-      textFinancEsp: [''],
-      is_activeTf: [''],
+      textFinanc: ['', Validators.required],
+      textFinancEsp: ['', Validators.required],
+      is_activeTf: ['', Validators.required],
+      target: ['', Validators.required],
       image: [''],
     });
   }
@@ -89,6 +93,8 @@ export class FaceFormComponent implements OnInit {
   get price() { return this.fibrofaceForm.get('price'); }
   get popup() { return this.fibrofaceForm.get('popup'); }
   get button() { return this.fibrofaceForm.get('button'); }
+  get buttonEs() { return this.fibrofaceForm.get('buttonEs'); }
+  get target() { return this.fibrofaceForm.get('target'); }
   get textFinanc() { return this.fibrofaceForm.get('textFinanc'); }
   get textFinancEsp() { return this.fibrofaceForm.get('textFinancEsp'); }
   get is_activeTf() { return this.fibrofaceForm.get('is_activeTf'); }
@@ -102,6 +108,8 @@ export class FaceFormComponent implements OnInit {
     formData.append('price', this.fibrofaceForm.get('price').value);
     formData.append('popup', this.fibrofaceForm.get('popup').value);
     formData.append('button', this.fibrofaceForm.get('button').value);
+    formData.append('buttonEs', this.fibrofaceForm.get('buttonEs').value);
+    formData.append('target', this.fibrofaceForm.get('target').value);
     formData.append('is_featured', this.fibrofaceForm.get('is_featured').value);
     formData.append('is_active', this.fibrofaceForm.get('is_active').value);
     formData.append('image', this.fibrofaceForm.get('image').value);

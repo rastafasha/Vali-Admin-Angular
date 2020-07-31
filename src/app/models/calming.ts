@@ -8,6 +8,8 @@ export class Calming {
     price: string;
     popup: string;
     button: string;
+    buttonEs: string;
+    target: string;
     image: string;
     is_featured: boolean;
     is_active: boolean;

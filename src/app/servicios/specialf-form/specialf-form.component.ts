@@ -43,11 +43,13 @@ export class SpecialfFormComponent implements OnInit {
             price: res.price,
             popup: res.popup,
             button: res.button,
+            buttonEs: res.buttonEs,
             is_featured: res.is_featured,
             is_active: res.is_active,
             textFinanc: res.textFinanc,
             textFinancEsp: res.textFinancEsp,
             is_activeTf: res.is_activeTf,
+            target: res.target,
             id: res.id
           });
           this.imagePath = res.image;
@@ -66,11 +68,13 @@ export class SpecialfFormComponent implements OnInit {
       price: ['', Validators.required],
       popup: ['', Validators.required],
       button: ['', Validators.required],
+      buttonEs: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
-      textFinanc: [''],
-      textFinancEsp: [''],
-      is_activeTf: [''],
+      textFinanc: ['', Validators.required],
+      textFinancEsp: ['', Validators.required],
+      is_activeTf: ['', Validators.required],
+      target: ['', Validators.required],
       image: [''],
     });
   }
@@ -89,6 +93,8 @@ export class SpecialfFormComponent implements OnInit {
   get price() { return this.specialfForm.get('price'); }
   get popup() { return this.specialfForm.get('popup'); }
   get button() { return this.specialfForm.get('button'); }
+  get buttonEs() { return this.specialfForm.get('buttonEs'); }
+  get target() { return this.specialfForm.get('target'); }
   get textFinanc() { return this.specialfForm.get('textFinanc'); }
   get textFinancEsp() { return this.specialfForm.get('textFinancEsp'); }
   get is_activeTf() { return this.specialfForm.get('is_activeTf'); }
@@ -102,6 +108,8 @@ export class SpecialfFormComponent implements OnInit {
     formData.append('price', this.specialfForm.get('price').value);
     formData.append('popup', this.specialfForm.get('popup').value);
     formData.append('button', this.specialfForm.get('button').value);
+    formData.append('buttonEs', this.specialfForm.get('buttonEs').value);
+    formData.append('target', this.specialfForm.get('target').value);
     formData.append('is_featured', this.specialfForm.get('is_featured').value);
     formData.append('is_active', this.specialfForm.get('is_active').value);
     formData.append('image', this.specialfForm.get('image').value);

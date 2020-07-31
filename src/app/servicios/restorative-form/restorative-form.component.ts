@@ -43,11 +43,13 @@ export class RestorativeFormComponent implements OnInit {
             price: res.price,
             popup: res.popup,
             button: res.button,
+            buttonEs: res.buttonEs,
             is_featured: res.is_featured,
             is_active: res.is_active,
             textFinanc: res.textFinanc,
             textFinancEsp: res.textFinancEsp,
             is_activeTf: res.is_activeTf,
+            target: res.target,
             id: res.id
           });
           this.imagePath = res.image;
@@ -66,11 +68,13 @@ export class RestorativeFormComponent implements OnInit {
       price: ['', Validators.required],
       popup: ['', Validators.required],
       button: ['', Validators.required],
+      buttonEs: ['', Validators.required],
       is_featured: ['0'],
       is_active: ['1'],
-      textFinanc: [''],
-      textFinancEsp: [''],
-      is_activeTf: [''],
+      textFinanc: ['', Validators.required],
+      textFinancEsp: ['', Validators.required],
+      is_activeTf: ['', Validators.required],
+      target: ['', Validators.required],
       image: [''],
     });
   }
@@ -89,6 +93,8 @@ export class RestorativeFormComponent implements OnInit {
   get price() { return this.restorativeForm.get('price'); }
   get popup() { return this.restorativeForm.get('popup'); }
   get button() { return this.restorativeForm.get('button'); }
+  get buttonEs() { return this.restorativeForm.get('buttonEs'); }
+  get target() { return this.restorativeForm.get('target'); }
   get textFinanc() { return this.restorativeForm.get('textFinanc'); }
   get textFinancEsp() { return this.restorativeForm.get('textFinancEsp'); }
   get is_activeTf() { return this.restorativeForm.get('is_activeTf'); }
@@ -102,6 +108,8 @@ export class RestorativeFormComponent implements OnInit {
     formData.append('price', this.restorativeForm.get('price').value);
     formData.append('popup', this.restorativeForm.get('popup').value);
     formData.append('button', this.restorativeForm.get('button').value);
+    formData.append('buttonEs', this.restorativeForm.get('buttonEs').value);
+    formData.append('target', this.restorativeForm.get('target').value);
     formData.append('is_featured', this.restorativeForm.get('is_featured').value);
     formData.append('is_active', this.restorativeForm.get('is_active').value);
     formData.append('image', this.restorativeForm.get('image').value);

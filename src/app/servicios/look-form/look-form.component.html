@@ -112,10 +112,10 @@
                                     <div class="form-group form-row">
                                         <label class="col-md-3">Texto Financiamiento <span class="required">*</span></label>
                                         <div class="col-md-9">
-                                            <input type="text" formControlName="textFinancEsp" class="form-control" placeholder="Texto Financiamiento" required>
-                                            <div *ngIf="textFinancEsp.invalid && (textFinancEsp.dirty || textFinancEsp.touched)" class="error">
+                                            <input type="text" formControlName="textFinancEsp" class="form-control" required>
+                                            <div *ngIf="textFinancEsp.invalid && (textFinanc.dirty || textFinancEsp.touched)" class="error">
                                                 <div *ngIf="textFinancEsp.errors">
-                                                    Financiamiento is required.
+                                                    Financing is required.
                                                 </div>
                                             </div>
                                         </div>
@@ -148,7 +148,7 @@
                                 </div>
                             </div>
                             <div class="form-group form-row">
-                                <label class="col-md-3">Button (url from: square) <span class="required">*</span></label>
+                                <label class="col-md-3">Button (url) <span class="required">*</span></label>
                                 <div class="col-md-9">
                                     <textarea formControlName="button" rows="5" class="form-control" placeholder="Button" required></textarea>
                                     <div *ngIf="button.invalid && (button.dirty || button.touched)" class="error">
@@ -156,6 +156,24 @@
                                             Button is required.
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Button Esp (url) <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <textarea formControlName="buttonEs" rows="5" class="form-control" placeholder="Code buttonEs" required></textarea>
+                                    <div *ngIf="buttonEs.invalid && (buttonEs.dirty || buttonEs.touched)" class="error">
+                                        <div *ngIf="buttonEs.errors">
+                                            Button is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" form-group form-row">
+                                <label class="col-md-3">Target Link </label>
+                                <div class="col-md-9 demo-radio-button">
+                                    <input type="radio" class="radio-col-green " formControlName="target" value="_blank" mdbInput> Externo
+                                    <input type="radio" class="radio-col-red" formControlName="target" value="_self" mdbInput> interno
                                 </div>
                             </div>
                             <div class="form-group form-row">
