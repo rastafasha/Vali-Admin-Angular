@@ -1,0 +1,66 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="content-inner">
+    <div class="container-fluid">
+
+        <!-- Begin Page Header-->
+        <div class="row">
+            <div class="page-header">
+                <div class="d-flex align-items-center">
+                    <h2 class="page-header-title">{{title}}</h2>
+                    <div>
+                        <div class="page-header-tools">
+                            <a class="btn btn-gradient-01" href="javascript:void(0)" (click)="goBack()">Back</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="page-header-tools">
+                            <a class="btn btn-gradient-01" [routerLink]="['/financing/create/']">Add Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Header -->
+        <div class="row flex-row">
+            <div class="col-12">
+                <!-- Form -->
+                <div class="widget has-shadow">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <th>#ID</th>
+                            <th>video</th>
+                            <th>Video Esp</th>
+                            <th>ver Video</th>
+                            <th>Imagen</th>
+                            <th>ver Imagen</th>
+                            <th>Created At</th>
+                            <th>Is Active</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr *ngFor="let financing of financings | paginate: { itemsPerPage: count, currentPage: p }">
+                            <td>{{financing.id}}</td>
+                            <td>{{financing.video}}</td>
+                            <td>{{financing.videoEsp}}</td>
+                            <td>{{financing.verVideo}}</td>
+                            <td><img src="{{financing.image}}" style="width: 100px"></td>
+                            <td>{{financing.verImagen}}</td>
+                            <td>{{financing.created_at | date: 'mediumDate'}}</td>
+                            <td>{{financing.is_active}}</td>
+                            <td class="td-actions">
+                                <a [routerLink]="['/financing/edit', financing.id]"><i class="la la-edit edit"></i></a>
+                                <a (click)="onDelete(financing.id)"><i class="la la-close delete"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    {{error}}
+
+                </div>
+                <!-- End Form -->
+            </div>
+        </div>
+        <!-- End Row -->
+    </div>
+    <!-- End Container -->
+    <app-footer></app-footer>

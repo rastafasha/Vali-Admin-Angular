@@ -78,6 +78,8 @@ import { ShareThisComponent } from './share-this/share-this.component';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { MembershipFormComponent } from './forms/membership-form/membership-form.component';
 import { ManageMembershipComponent } from './manage/manage-membership/manage-membership.component';
+import { ManageFinancingComponent } from './manage/manage-financing/manage-financing.component';
+import { FormFinancingComponent } from './forms/form-financing/form-financing.component';
 
 @NgModule({
   declarations: [
@@ -137,7 +139,9 @@ import { ManageMembershipComponent } from './manage/manage-membership/manage-mem
     ManageRegistrosComponent,
     ShareThisComponent,
     MembershipFormComponent,
-    ManageMembershipComponent
+    ManageMembershipComponent,
+    ManageFinancingComponent,
+    FormFinancingComponent
   ],
   imports: [
     BrowserModule,

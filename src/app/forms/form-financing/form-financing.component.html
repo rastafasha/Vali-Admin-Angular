@@ -1,0 +1,106 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<div class="content-inner">
+    <div class="container-fluid">
+
+        <!-- Begin Page Header-->
+        <div class="row">
+            <div class="page-header">
+                <div class="d-flex align-items-center">
+                    <h2 class="page-header-title">{{pageTitle}}</h2>
+                    <div>
+                        <div class="page-header-tools">
+                            <a class="btn btn-gradient-01" href="javascript:void(0)" (click)="goBack()">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Header -->
+        <div class="row flex-row">
+            <div class="col-12">
+                <!-- Form -->
+                <div class="widget has-shadow">
+                    <div class="antiage-form widget-body">
+                        <form [formGroup]="financingForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Is Active</label>
+                                <div class="col-md-9">
+                                    <input type="radio" formControlName="is_active" value="1" /> Yes
+                                    <input type="radio" formControlName="is_active" value="0" /> No
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#home">English</a></li>
+                                <li><a data-toggle="tab" href="#menu1">Español</a></li>
+                            </ul>
+                            <!--English-->
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane active">
+
+                                    <div class="form-group form-row">
+                                        <label class="col-md-3">Video (url from: youtube) <span class="required">*</span></label>
+                                        <div class="col-md-9">
+                                            <textarea formControlName="video" rows="5" class="form-control" placeholder="video"></textarea>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Español-->
+                                <div id="menu1" class="tab-pane fade">
+
+                                    <div class="form-group form-row">
+                                        <label class="col-md-3">Video (url from: youtube) <span class="required">*</span></label>
+                                        <div class="col-md-9">
+                                            <textarea formControlName="videoEsp" rows="5" class="form-control" placeholder="video"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---//Español-->
+                            </div>
+
+
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Upload Image (max - 500kb) | size: 388 x 285px</label>
+                                <div class="col-md-9">
+                                    <input type="file" id="image" (change)="onSelectedFile($event)" />
+                                    <div [innerHTML]="uploadError" class="error"></div>
+                                    <div *ngIf="imagePath">
+                                        <br />
+                                        <img [src]="imagePath" width="100px">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Imagen Is Active</label>
+                                <div class="col-md-9">
+                                    <input type="radio" formControlName="verImagen" value="displblok" /> Yes
+                                    <input type="radio" formControlName="verImagen" value="displNone" /> No
+                                </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Video Is Active</label>
+                                <div class="col-md-9">
+                                    <input type="radio" formControlName="verVideo" value="displblok" /> Yes
+                                    <input type="radio" formControlName="verVideo" value="displNone" /> No
+                                </div>
+                            </div>
+
+                            <div class="form-group form-row">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <input type="hidden" formControlName="id">
+                                    <button type="submit" [disabled]="!financingForm.valid" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {{error}}
+                </div>
+                <!-- End Form -->
+            </div>
+        </div>
+        <!-- End Row -->
+    </div>
+    <!-- End Container -->
+    <app-footer></app-footer>

@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 })
 export class ManageAntiageComponent implements OnInit {
 
-  title = 'Manage Antiage';
+  title = 'Manage Financing';
   antiages: Antiage;
   error: string;
   p: Number = 1;
